@@ -1,0 +1,113 @@
+           body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0;
+            background-color: #1c0a2d;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+            font-family: -apple-system, BlinkMacSystemFont, 
+            'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+            'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .heading {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            color: white;
+            padding: 1rem 0;
+        }
+        #particles-js {
+            background: black;
+            height: 20vh;
+        }
+        .logo {
+         /*    position: relative; Position the logo absolutely */
+        /*    top: 100px; 
+            left: 50px; 
+            border: 1px;
+            padding: 5px;
+            width: 10px;*/ 
+         /*    height: auto; Automatically adjust the height to maintain aspect ratio */
+        }
+        p{
+            color: #FFFFFF
+        }
+        .container {
+            max-width: 1200px;
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            /* box-sizing: border-box;  Include padding and borders in the width calculation */
+        }  
+        /* Adjust other CSS styles for your content as needed */
+        
+        .highlight {
+            font-size: 1.2rem;
+            color: #FFA500;
+            margin-bottom: 0;
+        }
+        .subevent {
+            margin: 0;
+            padding: 1rem;
+            background-color: #F9F9F9;
+            border-radius: 10px;
+        }
+      
+        .subevent h2 {
+            color: #cacaca;
+            margin-bottom: 0.5rem;
+        }
+        .subevent p {
+            margin-bottom: 1rem;
+        }
+        .subevent a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+        .subevent a:hover {
+            text-decoration: underline;
+        }
+        .subevents-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Gap between subevents */
+            justify-content: space-between; /* Distribute items evenly along the main axis */
+        }          
+          .subevent-details {
+            width: calc(30% - 20px); /* Width of each subevent column */
+            background-color: #F9F9F9;
+            background-image: linear-gradient(to right, rgb(58, 43, 198) , rgb(80, 146, 212));
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 2rem;
+            box-sizing: border-box;
+        }
+            .subevent-details h2 {
+                color: #ffffff;
+                margin-bottom: 0.5rem;
+            }
+            .subevent-details a {
+                color: #FFA500;
+                text-decoration: none;
+            }
+            .subevent-details:hover {
+                transform: scale(1.05);
+            }
+        /* Center the contact and gallery sections */
+        .contact,.gallery {
+            text-align: center;
+            margin: 4rem 0;
+        }
+     
+        .gallery img {
+            max-width: 100%;
+            
+        }
+      
+
+
+

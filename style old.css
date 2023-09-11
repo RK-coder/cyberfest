@@ -1,0 +1,141 @@
+  .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-content {
+            background-color: #FFF;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+        /* Styling for the SVG close icon */
+        .popup-close {
+            fill: #FFA500; /* Orange color */
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            }
+           
+
+        /* Styling for the popup content */
+        .pop {
+            background-color: #8A2BE2; /* Purple color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0;
+        }
+
+        /* Styling for form labels */
+        .pop label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Styling for form input fields */
+        .pop input[type="text"],
+        .pop input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+        }
+
+        /* Styling for submit button */
+        .pop input[type="submit"] {
+            background-color: #FFA500;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Styling for submit button on hover */
+        .pop input[type="submit"]:hover {
+            background-color: #FF8000;
+        }
+           /* Styling for the registration form */
+    .registration-form {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styling for form labels */
+    .registration-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* Styling for form input fields */
+    .registration-form input[type="text"],
+    .registration-form input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #E0E0E0;
+        border-radius: 5px;
+    }
+
+    /* Styling for submit button */
+    .registration-form input[type="submit"] {
+        background-color: #FFA500;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Styling for submit button on hover */
+    .registration-form input[type="submit"]:hover {
+        background-color: #FF8000;
+    }
+      /* Style for gallery images 
+.gallery img {
+    max-width: 100%;
+    margin: 1rem;
+}
+*/
+    /*  .subevent-details:nth-child(even) {
+            background-color: #e74c3c;  Alizarin 
+        }  */
+        .gallery {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+
+        <!--  <input type="text" name="college" class="form-control <?php echo (!empty($college_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $college; ?>">-->
+
+         /*
+        if (isset($_SESSION['user_id'])) {
+            $user_id = $_SESSION['user_id'];
+            $query = "SELECT name FROM users WHERE id = ?";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param('i', $user_id);
+            $stmt->execute();
+            $stmt->bind_result($name);
+            $stmt->fetch();
+            $stmt->close();
+            echo "<p>Welcome, $name! <a href='logout.php'>Logout</a></p>";
+        } else {
+            echo "<a href='login.php'>Login</a>";
+        }*/
