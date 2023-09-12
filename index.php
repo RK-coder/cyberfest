@@ -15,21 +15,43 @@
     <link href="particlesjs-config.json" rel="json">
     
 </head>
-
 <body>
-
-<div id="particles-js">
-	<div class="heading">
     <header>
-    <img src="cyberfest2.png" alt="logo" style="width:250px">
-        <h4>Experience the World of Technology</h4>
-        <p><a href='login.php'>Login</a></p>
+        <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>
+        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+        <nav>
+        <a href="#section1">Home</a>
+        <a href="#section2">About Us</a>
+        <a href="#section3">Events</a>
+        <a href="#section4">Contact</a>
+        <a href="#section5">Gallery</a>
+        <a href='login.php'>Login</a>
+    </nav>
     </header>
+
+    <section id="section1">
+        <h2>Home</h2>
+	<div class="heading" id="particles-js">
+        <h2>COIMBATORE INSTITUTE OF TECHNOLOGY</h2>
+        <h3>Department of Computer Applications </h3>
+        <h6> Proudly Presents </h6>
+        <img src="cyberfest2.png" alt="logo" style="width:250px">
+        <h4>Experience the World of Technology</h4>   
     </div>
-</div>
+    </section>
+
     <div class="container">
+
+        <section id="section2">
+        <h2>About Us</h2>
+        <p>This is the content of Section 1.</p>
+  
         <div class="highlight">Event Highlights:</div>
         <p>Join us for a series of technical subevents that will challenge and inspire you in the world of technology.</p>
+        </section>  
+
+        <section id="section3">
+        <h2>Events</h2>
         <div class="subevents-container">
             <div class="subevent-details" id="hackathon-details">
                 <h2>Hackathon Hustle</h2>
@@ -58,22 +80,36 @@
                 <a href="techtalk.html">Learn More</a>
             </div>
         </div> 
+        </section>
+
+        <section id="section4">
+        <h2>Contact</h2>
         <div class="contact">
             <h2>Contact Us</h2>
             <p>Email: info@cyberfest.com</p>
             <p>Phone: +123-456-7890</p>
         </div>
+        </section>
+
+        <section id="section5">
+        <h2>Gallery</h2>
         <div class="gallery">
             <h2>Event Gallery</h2>
             <img src="gallery/image1.jpg" alt="Event Photo">
             <img src="gallery/image2.jpg" alt="Event Photo">
             <!-- Add more images -->
         </div>
+        </section>
     </div>
     <script src="particles.js">
 	</script>
 	<script src="app.js">
 	</script>
-      
+       <script>
+        function toggleNav() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
