@@ -139,3 +139,119 @@
         } else {
             echo "<a href='login.php'>Login</a>";
         }*/
+        
+        .logo {
+            /*    position: relative; Position the logo absolutely */
+           /*    top: 100px; 
+               left: 50px; 
+               border: 1px;
+               padding: 5px;
+               width: 10px;*/ 
+            /*    height: auto; Automatically adjust the height to maintain aspect ratio */
+           }
+           #particles-js {
+            background: black;
+            position: relative;
+            height: 161px; /* Set the desired height for the canvas background */
+            overflow: hidden;
+        }
+        #particles-js canvas {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Set z-index to send it to the background */
+            <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1420" height="161"></canvas>
+            <script src="particles.js"></script>
+            <script src="app.js"></script>
+            
+/*.subevent {
+    margin: 0;
+    padding: 1rem;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+}
+
+.subevent h2 {
+    color: #cacaca;
+    margin-bottom: 0.5rem;
+}
+
+.subevent p {
+    margin-bottom: 1rem;
+}
+
+.subevent a {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+.subevent a:hover {
+    text-decoration: underline;
+}
+*/
+@media screen and (max-width: 800px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        display: flex; 
+        max-height: none;
+    }
+
+    .header-content {
+        display: none;
+    }
+    
+    .nav.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    .nav.active a {
+        padding: 10px 20px;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 601px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #333;
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav a:hover {
+        background-color: #555;
+    }
+}*/
+
+/* Adjust other CSS styles for your content as needed */
+/*h4 {
+    font-size: 24px;
+    margin: 0;
+    text-align: left;
+}*/

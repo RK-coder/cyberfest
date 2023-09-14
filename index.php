@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-     <!-- Import Particles.js and app.js files -->
 
 <head>
     <meta charset="UTF-8">
@@ -12,49 +11,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link href="particlesjs-config.json" rel="json">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header>
-        <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>
-        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
-        <nav>
-        <a href="#section1">Home</a>
-        <a href="#section2">About Us</a>
-        <a href="#section3">Events</a>
-        <a href="#section4">Contact</a>
-        <a href="#section5">Gallery</a>
-        <a href='login.php'>Login</a>
-    </nav>
-    </header>
 
-    <section id="section1">
-        <h2>Home</h2>
-	<div class="heading" id="particles-js">
-        <h2>COIMBATORE INSTITUTE OF TECHNOLOGY</h2>
-        <h3>Department of Computer Applications </h3>
-        <h6> Proudly Presents </h6>
-        <img src="cyberfest2.png" alt="logo" style="width:250px">
-        <h4>Experience the World of Technology</h4>   
+<header>
+    <div class="navbar">
+        <img src="CIT logo.png" alt="logo" style="width: 40px">
+        <h4>COIMBATORE INSTITUTE OF TECHNOLOGY</h4>    
+            <nav class="nav">
+                <a href="#section1">Home</a>
+                <a href="#section2">About</a>
+                <a href="#section3">Events</a>
+                <a href="#section4">Contact</a>
+                <a href="#section5">Gallery</a>
+                <a href='login.php'>Login</a>
+            </nav>
+        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
     </div>
-    </section>
+</header>
 
     <div class="container">
+        <section id="section1">
+        <div class="heading">
+            <h2>COIMBATORE INSTITUTE OF TECHNOLOGY</h2>
+            <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4>
+            <h6> PROUDLY PRESENTs </h6>
+            <img src="cyberfest2.png" alt="logo" style="width:250px">
+            <h4>EXPERIENCE THE WORLD OF TECHNOLOGY</h4>   <br>
+        </div>
+        </section>
 
-        <section id="section2">
-        <h2>About Us</h2>
-        <p>This is the content of Section 1.</p>
-  
-        <div class="highlight">Event Highlights:</div>
-        <p>Join us for a series of technical subevents that will challenge and inspire you in the world of technology.</p>
+        <section id="section2"><br><br>
+        <h2 style="text-align:center">ABOUT CYBERFEST 2K23</h2><br><br>
+        <p>CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY.
+            THIS EVENT SERVES AS A BEACON OF INSPIRATION, GUIDING INDIVIDUALS TO SHARPEN THEIR SOCIO-TECHNICAL SKILLS.
+            IT OFFERS A PLATFORM FOR UNDERGRADUATE AND POSTGRADUATE STUDENTS, SPANNING ACROSS DIVERSE EDUCATIONAL BACKGROUNDS, TO PARTICIPATE AND ENGAGE IN HEALTHY COMPETITION.
+            THIS DYNAMIC, ONE-DAY SYMPOSIUM IS A RICH FUSION OF VARIOUS THOUGHT-PROVOKING EVENTS AND ACTIVITIES.
+            JOIN US FOR A SERIES OF TECHNICAL SUBEVENTS THAT WILL CHALLENGE AND INSPIRE YOU IN THE WORLD OF TECHNOLOGY.</p>
         </section>  
+        <br><br><br><br>
 
         <section id="section3">
-        <h2>Events</h2>
+        <h2 style="text-align:center">EVENTS</h2><br><br>
         <div class="subevents-container">
             <div class="subevent-details" id="hackathon-details">
-                <h2>Hackathon Hustle</h2>
+                <h2>HACKATHON HUSTLE</h2>
                 <p>
                     Put your coding skills to the test and develop innovative solutions in a time-bound challenge.
                 </p>
@@ -86,30 +89,29 @@
         <h2>Contact</h2>
         <div class="contact">
             <h2>Contact Us</h2>
-            <p>Email: info@cyberfest.com</p>
-            <p>Phone: +123-456-7890</p>
+            <a href="#" class="fa fa-instagram"></a>
         </div>
-        </section>
+    </section>
 
         <section id="section5">
-        <h2>Gallery</h2>
         <div class="gallery">
             <h2>Event Gallery</h2>
             <img src="gallery/image1.jpg" alt="Event Photo">
             <img src="gallery/image2.jpg" alt="Event Photo">
-            <!-- Add more images -->
         </div>
         </section>
     </div>
-    <script src="particles.js">
-	</script>
-	<script src="app.js">
-	</script>
+   
+    <script src="script.js"></script>
        <script>
         function toggleNav() {
             var nav = document.querySelector('nav');
             nav.classList.toggle('active');
         }
+
+        const navigationHeight =document.querySelector('.nav').offsetHeight;
+        document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
+   
     </script>
 </body>
 </html>
