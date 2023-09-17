@@ -18,8 +18,8 @@
 
 <header>
     <div class="navbar">
-        <img src="CIT logo.png" alt="logo" style="width: 40px">
-        <h4>COIMBATORE INSTITUTE OF TECHNOLOGY</h4>    
+    <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
+        COIMBATORE INSTITUTE OF TECHNOLOGY</h4>    
             <nav class="nav">
                 <a href="#section1">Home</a>
                 <a href="#section2">About</a>
@@ -31,18 +31,29 @@
         <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
     </div>
 </header>
-
-    <div class="container">
+    
         <section id="section1">
-        <div class="heading">
-            <h2>COIMBATORE INSTITUTE OF TECHNOLOGY</h2>
+        <div class="heading"><br>
+            <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4>
             <h6> PROUDLY PRESENTs </h6>
             <img src="cyberfest2.png" alt="logo" style="width:250px">
-            <h4>EXPERIENCE THE WORLD OF TECHNOLOGY</h4>   <br>
+            <h4>EXPERIENCE THE WORLD OF TECHNOLOGY</h4> <br>
+        
+        <div class="timer">
+            <h1 id="headline">Countdown to the Event</h1>
+            <div id="countdown">
+                <ul>
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hours</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+                </ul>
+            </div>
+        </div>
         </div>
         </section>
-
+    <div class="container">
         <section id="section2"><br><br>
         <h2 style="text-align:center">ABOUT CYBERFEST 2K23</h2><br><br>
         <p>CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY.
@@ -85,8 +96,8 @@
         </div> 
         </section>
 
-        <section id="section4">
-        <h2>Contact</h2>
+        <section id="section4"><br><br>
+        <h2 style="text-align: center;">Contact</h2>
         <div class="contact">
             <h2>Contact Us</h2>
             <a href="#" class="fa fa-instagram"></a>
@@ -113,5 +124,43 @@
         document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
    
     </script>
+
+    <script >
+        (function () {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  // Set the date and time of your one-time event
+  const eventDate = new Date('2023-09-30T23:59:59').getTime();
+
+  const x = setInterval(function () {
+    const now = new Date().getTime(),
+      distance = eventDate - now;
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
+    if (distance < 0) {
+      document.getElementById("headline").innerText = "Event Started!";
+      daysElement.innerText = "0";
+      hoursElement.innerText = "0";
+      minutesElement.innerText = "0";
+      secondsElement.innerText = "0";
+      clearInterval(x);
+    } else {
+      daysElement.innerText = Math.floor(distance / day);
+      hoursElement.innerText = Math.floor((distance % day) / hour);
+      minutesElement.innerText = Math.floor((distance % hour) / minute);
+      secondsElement.innerText = Math.floor((distance % minute) / second);
+    }
+  }, 1000);
+})();
+
+    </script>
+    
 </body>
 </html>

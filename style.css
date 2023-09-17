@@ -1,5 +1,3 @@
-/* style.css */
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-padding, 50px);
@@ -8,15 +6,15 @@ html {
 body {
     margin: 0;
     padding: 0;
-    padding-top: 90px;
-    background-color: #39065A;
+    padding-top: 70px;
+    background-color: #000000;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
 }
 
 header {
-    background-color: #6A0572;
+    background-color: #08034d;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -24,6 +22,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1;
+    margin: 0;
 }
 .header a{
     text-align: center;
@@ -48,7 +47,6 @@ nav a {
 
 nav a:hover {
     color: #FFA500;
-    background-color: #190061;
 }
 
 .hamburger {
@@ -61,9 +59,64 @@ canvas {
     z-index: -1;
 }
 
-@media screen and (max-width: 950px) {
+/* Clock Styling */
+:root {
+    --smaller: .75;
+  }
+  .timer {
+    color: #d3ff11;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+  }
+  
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  
+  .emoji {
+    display: none;
+    padding: 1rem;
+  }
+  
+  .emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+  }
+  
+@media all and (max-width: 650px) {
+    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+    
+    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+    
+    li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  
+  }
+ /*End of clock styling*/
+
+@media screen and (max-width: 1080px) {
     h4 {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .hamburger {
@@ -93,7 +146,7 @@ canvas {
 }
 
 .logo {
-    margin-right: 50px; /* Adjust the value to your desired spacing */
+    margin-right: 100px; /* Adjust the value to your desired spacing */
 }
 
 .container {
@@ -105,8 +158,10 @@ canvas {
 .heading {
     text-align: center;
     background-image:url( techu.png);
+    background-size: cover;
+    background-position: center;
     position: relative;
-    height: 300px; /* Set the desired height for the canvas background */
+    height: auto; /* Set the desired height for the canvas background */
     overflow: hidden;
 }
 
@@ -125,16 +180,19 @@ canvas {
 
 .subevents-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 50px;
+    padding-left:auto;
 }
 
 .subevent-details {
-    width: calc(30% - 20px);
+    width: 300px; /*calc(30% - 20px);*/
     height: 300px; /* Set the height for each box */
-    background-color: #F9F9F9;
-    background-image: linear-gradient(to right, rgb(58, 43, 198), rgb(80, 146, 212));
+    /* background-color: #F9F9F9;
+    background-image: linear-gradient(to right, rgb(58, 43, 198), rgb(80, 146, 212));*/
+    background-image: url(tech3.jpg);
+    background-size: cover;
     padding: 1rem;
     border-radius: 10px;
     border: 1px solid #E0E0E0;
@@ -142,6 +200,7 @@ canvas {
     overflow: hidden;
     box-sizing: border-box;
     justify-content: space-between;
+    transition: scale 2s;
 }
 
 .subevent-details h2 {
@@ -166,15 +225,20 @@ canvas {
 }
 
 /* Media queries for responsive layout */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 950px) {
     .subevent-details {
-        width: calc(50% - 20px);
+        width: 300px;
+        height: 300px;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
     .subevent-details {
-        width: 100%;
+        width: 300px;
+        height: 300px;
+    }
+    h4{
+        font-size: 15px;
     }
 }
 
