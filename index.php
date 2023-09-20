@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +16,23 @@
 <body>
 
 <header>
-    <div class="navbar">
-    <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
-        COIMBATORE INSTITUTE OF TECHNOLOGY</h4>    
-            <nav class="nav">
-                <a href="#section1">Home</a>
-                <a href="#section2">About</a>
-                <a href="#section3">Events</a>
-                <a href="#section4">Contact</a>
-                <a href="#section5">Gallery</a>
-                <a href='login.php'>Login</a>
-            </nav>
-        <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+    <div class="top-nav">
+        <div>
+        <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
+        COIMBATORE INSTITUTE OF TECHNOLOGY</h4>  
+        </div>  
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class="menu-button"></div>
+            </label>
+                <ul class="menu">
+                <li>   <a href="#section1">Home</a></li>
+                <li>   <a href="#section2">About</a></li>
+                <li>   <a href="#section3">Events</a></li>
+                <li>   <a href="#section4">Contact</a></li>
+                <li>   <a href="#section5">Gallery</a></li>
+                <li>   <a href='login.php' class="btn btn-primary">Login</a></li>
+                </ul>
     </div>
 </header>
     
@@ -36,7 +40,7 @@
         <div class="heading"><br>
             <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4>
-            <h6> PROUDLY PRESENTs </h6>
+            <h6> CONDUCTs </h6>
             <img src="cyberfest2.png" alt="logo" style="width:250px">
             <h4>EXPERIENCE THE WORLD OF TECHNOLOGY</h4> <br>
         
@@ -54,7 +58,7 @@
         </div>
         </section>
     <div class="container">
-        <section id="section2"><br><br>
+        <section id="section2">
         <h2 style="text-align:center">ABOUT CYBERFEST 2K23</h2><br><br>
         <p>CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY.
             THIS EVENT SERVES AS A BEACON OF INSPIRATION, GUIDING INDIVIDUALS TO SHARPEN THEIR SOCIO-TECHNICAL SKILLS.
@@ -67,40 +71,61 @@
         <section id="section3">
         <h2 style="text-align:center">EVENTS</h2><br><br>
         <div class="subevents-container">
-            <div class="subevent-details" id="hackathon-details">
-                <h2>HACKATHON HUSTLE</h2>
-                <p>
-                    Put your coding skills to the test and develop innovative solutions in a time-bound challenge.
-                </p>
-                <a href="register.html">Register Now</a>
-                <a href="hackathon.html">Learn More</a>
+
+            <div class="subevent-details" id="hackathon-details" onclick="openPopup('event1')">
+             <h2>HACKATHON HUSTLE</h2>
+            <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.
+            </p>
             </div>
-            <div class="subevent-details" id="cipher-details">
+            <div class="subevent-details" id="cipher-details" onclick="openPopup('event2')">
                 <h2>CodeCraft Challenge</h2>
                 <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
-                <a href="register.html">Register Now</a>
-                <a href="codecraft.html">Learn More</a>
             </div>
-            <div class="subevent-details">
+            <div class="subevent-details" onclick="openPopup('event3')">
                 <h2>CyberSecurity Cipher</h2>
                 <p>Explore the world of cybersecurity and decode challenging puzzles to protect digital assets.</p>
-                <a href="register.html">Register Now</a>
-                <a href="cybersecurity.html">Learn More</a>
             </div>
-            <div class="subevent-details">
+            <div class="subevent-details" onclick="openPopup('event4')">
                 <h2>TechTalk Symposium</h2>
                 <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
-                <a href="register.html">Register Now</a>
-                <a href="techtalk.html">Learn More</a>
             </div>
         </div> 
+        <div class="popup-overlay" id="event1-popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('event1')">&#10006;</span>
+            <h2>Hackathon Hustle</h2>
+            <p>Detailed description of event 1.</p>
+        </div>
+        </div>
+        <div class="popup-overlay" id="event2-popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('event2')">&#10006;</span>
+            <h2>CodeCraft Challenge</h2>
+                <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+        </div>
+        </div>
+        <div class="popup-overlay" id="event3-popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('event3')">&#10006;</span>
+            <h2>CyberSecurity Cipher</h2>
+                <p>Explore the world of cybersecurity and decode challenging puzzles to protect digital assets.</p>
+        </div>
+        </div>
+        <div class="popup-overlay" id="event4-popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('event4')">&#10006;</span>
+            <h2>TechTalk Symposium</h2>
+                <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+        </div>
+        </div>
         </section>
 
         <section id="section4"><br><br>
-        <h2 style="text-align: center;">Contact</h2>
         <div class="contact">
-            <h2>Contact Us</h2>
-            <a href="#" class="fa fa-instagram"></a>
+        <h2 style="text-align: center;">Contact</h2>
+            <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA==" class="fa fa-instagram"></a>
+            <a href="mailto:cyberfest2023@gmail.com"class="fa fa-envelope"></a>
+            <a href="tel:+91-7598596904"class="fa fa-phone"></a>
         </div>
     </section>
 
@@ -114,53 +139,10 @@
     </div>
    
     <script src="script.js"></script>
-       <script>
-        function toggleNav() {
-            var nav = document.querySelector('nav');
-            nav.classList.toggle('active');
-        }
-
+    <script>
         const navigationHeight =document.querySelector('.nav').offsetHeight;
         document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
-   
     </script>
 
-    <script >
-        (function () {
-  const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-
-  // Set the date and time of your one-time event
-  const eventDate = new Date('2023-09-30T23:59:59').getTime();
-
-  const x = setInterval(function () {
-    const now = new Date().getTime(),
-      distance = eventDate - now;
-
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
-
-    if (distance < 0) {
-      document.getElementById("headline").innerText = "Event Started!";
-      daysElement.innerText = "0";
-      hoursElement.innerText = "0";
-      minutesElement.innerText = "0";
-      secondsElement.innerText = "0";
-      clearInterval(x);
-    } else {
-      daysElement.innerText = Math.floor(distance / day);
-      hoursElement.innerText = Math.floor((distance % day) / hour);
-      minutesElement.innerText = Math.floor((distance % hour) / minute);
-      secondsElement.innerText = Math.floor((distance % minute) / second);
-    }
-  }, 1000);
-})();
-
-    </script>
-    
 </body>
 </html>
