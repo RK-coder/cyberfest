@@ -30,6 +30,7 @@ header {
     color: white;
 }
 
+/*
 .navbar {
     display: flex;
     align-items: center;
@@ -52,7 +53,7 @@ nav a:hover {
     text-decoration-line: none;
 }
 
-/*.hamburger {
+.hamburger {
     font-size: 28px;
     text-align: right;
     display: none;
@@ -213,8 +214,13 @@ nav a:hover {
     justify-content: space-between;
     transition: scale 2s;
     cursor: pointer;
+    align-items: center;
+    text-align: center;
 }
-
+.logoimg img {
+  max-width: 50%;
+  max-height: 50%;
+}
 .subevent-details h2 {
     color: #ffffff;
     margin-bottom: 0.5rem;
@@ -303,12 +309,9 @@ nav a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
-  background: linear-gradient(to left, #08034d, #08034d);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #08034d;
   color: #FFF;
-  text-decoration-color: white;
-  height: 50px;
+  height: 60px;
   padding: 1em;
 }
 
@@ -320,10 +323,18 @@ nav a:hover {
   padding: 0;
 }
 
-.menu > li {
+.menu a{
+  color: #FFF;
+}
+
+.menu li :hover{
+  color: #d3ff11;
+  text-decoration-line: none;
+}
+.menu li {
   margin: 0.5rem;
   overflow: hidden;
-  color: white;
+  text-decoration: none;
 }
 
 .menu-button-container {
@@ -398,9 +409,9 @@ nav a:hover {
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   #menu-toggle:checked ~ .menu li {
-    border: 1px solid #333;
+    border: 0.5px solid #333;
     height: 2.5em;
-    padding: 0.5em;
+    padding: 0.1em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .menu > li {

@@ -1,4 +1,4 @@
-body{
+.lb{
     background-color:#000;
     font: 14px sans-serif;
     height: 100vh;
@@ -164,3 +164,70 @@ input{
   font-size: 15px;
 }
 
+/*reg form*/
+/* Style for box */
+.regform {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Make the container take up the full viewport height */
+  color: #fff;
+  background-image: url(tech6.jpg);
+}
+
+.regform h2 {
+  text-align: center;
+}
+
+.regform p {
+  text-align: center;
+}
+
+form {
+  color: #fff;
+  padding: 20px;
+}
+
+.login-form {
+  border: 2px solid white; /* Add a white border around the form */
+  background-color: black; /* Set the background color to black */
+  padding: 20px;
+  color: white;
+}
+
+label {
+  font-size: 18px;
+}
+
+input {
+  font-size: 15px;
+}
+
+/* Add media query for screens wider than 550px */
+@media (min-width: 551px) {
+  .form-group {
+    display: inline-block;
+    width: calc(50% - 10px); /* Adjust the width based on your preference */
+    margin-right: 20px; /* Add some spacing between inputs */
+    vertical-align: top; /* Align inputs to the top */
+  }
+
+  /* Clear the right margin on every second input */
+  .form-group:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  /* Style for the 'Other Degree' field in large screens */
+  #otherField {
+    width: 100%;
+  }
+}
+
+/* Add media query for screens at most 550px wide */
+@media (max-width: 550px) {
+  .form-group {
+    display: block;
+    width: 100%; /* Full width for small screens */
+    margin-right: 0; /* Remove right margin */
+  }
+}

@@ -80,24 +80,71 @@
         <br><br><br><br>
 
         <section id="section3">
+        <form method="post" >
+
+        <?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+    $eventToRegister = $_POST['register'];
+
+    // Check if the event is already registered
+    // Assuming you have a database connection established
+
+    $id = $_SESSION['id'];
+
+    require_once 'db.php';
+
+    // Check if the user is already registered for this event
+    $stmt = $link->prepare("SELECT * FROM registrations WHERE event_name = ? AND id = ?");
+    $stmt->bind_param("si", $eventToRegister, $id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        echo '<script>alert("You are already registered for this event.");</script>';
+    } else {
+        // Register the user for the event
+        $stmt = $link->prepare("INSERT INTO registrations (event_name, id) VALUES (?, ?)");
+        $stmt->bind_param("si", $eventToRegister, $id);
+
+        if ($stmt->execute()) {
+            echo '<script>alert("Successfully registered for the event!");</script>';
+        } else {
+            echo '<script>alert("Registration failed. Please try again.");</script>';
+        }
+    }
+
+    $stmt->close();
+    $link->close();
+}
+?>
+
+
         <h2 style="text-align:center">EVENTS</h2><br><br>
         <div class="subevents-container">
-
-            <div class="subevent-details" id="hackathon-details" onclick="openPopup('event1')">
+            <div class="subevent-details" id="hackathon-details" data-event-id="1" onclick="openPopup('event1')">
              <h2>HACKATHON HUSTLE</h2>
+             <div class="logoimg">
+             <img src="loading.jpg" alt="logo"></div>
             <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.
             </p>
             </div>
-            <div class="subevent-details" id="cipher-details" onclick="openPopup('event2')">
+            <div class="subevent-details" id="cipher-details" data-event-id="2" onclick="openPopup('event2')">
                 <h2>CodeCraft Challenge</h2>
+                <div class="logoimg">
+             <img src="loading.jpg" alt="logo"></div>
                 <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
             </div>
-            <div class="subevent-details" onclick="openPopup('event3')">
+            <div class="subevent-details" data-event-id="3" onclick="openPopup('event3')">
                 <h2>CyberSecurity Cipher</h2>
+                <div class="logoimg">
+             <img src="loading.jpg" alt="logo"></div>
                 <p>Explore the world of cybersecurity and decode challenging puzzles to protect digital assets.</p>
             </div>
-            <div class="subevent-details" onclick="openPopup('event4')">
+            <div class="subevent-details" data-event-id="4" onclick="openPopup('event4')">
                 <h2>TechTalk Symposium</h2>
+                <div class="logoimg">
+             <img src="loading.jpg" alt="logo"></div>
                 <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
             </div>
         </div> 
@@ -106,6 +153,8 @@
             <span class="close-button" onclick="closePopup('event1')">&#10006;</span>
             <h2>Hackathon Hustle</h2>
             <p>Detailed description of event 1.</p>
+            <button type="submit" name="register" value="Hackathon hustle" class="btn btn-primary" >Register for Hackathon hustle</button>
+
         </div>
         </div>
         <div class="popup-overlay" id="event2-popup">
@@ -113,6 +162,7 @@
             <span class="close-button" onclick="closePopup('event2')">&#10006;</span>
             <h2>CodeCraft Challenge</h2>
                 <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+                <button type="submit" name="register" value="CodeCraft Challenge" class="btn btn-primary" >Register for CodeCraft Challenge</button>
         </div>
         </div>
         <div class="popup-overlay" id="event3-popup">
@@ -120,6 +170,7 @@
             <span class="close-button" onclick="closePopup('event3')">&#10006;</span>
             <h2>CyberSecurity Cipher</h2>
                 <p>Explore the world of cybersecurity and decode challenging puzzles to protect digital assets.</p>
+                <button type="submit" name="register" value="CyberSecurity Cipher" class="btn btn-primary" >Register for CyberSecurity Cipher</button>
         </div>
         </div>
         <div class="popup-overlay" id="event4-popup">
@@ -127,8 +178,10 @@
             <span class="close-button" onclick="closePopup('event4')">&#10006;</span>
             <h2>TechTalk Symposium</h2>
                 <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+                <button type="submit" name="register" value="TechTalk Symposium" class="btn btn-primary" >Register for TechTalk Symposium</button>
         </div>
         </div>
+        </form>
         </section>
 
         <section id="section4"><br><br>
@@ -158,7 +211,26 @@
 
         const navigationHeight =document.querySelector('.nav').offsetHeight;
         document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
-   
-    </script>
+       
+$(document).ready(function() {
+    $('#registrationForm').submit(function(event) {
+        event.preventDefault(); // Prevent the form from performing a full-page refresh
+        
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: 'welcome.php', // Update with the correct URL
+            data: formData,
+            success: function(response) {
+                // Display the alert based on the response from PHP
+                alert(response);
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>

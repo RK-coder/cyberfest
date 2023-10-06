@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM user WHERE username = ?";
+        $sql = "SELECT id, username, password FROM register WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </head>
 <body>
-
+<div class="lb">
 <header>
     <div class="top-nav">
         <div>
@@ -126,22 +126,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <h2> LOGIN </h2>
-            <div class="form-group">
+            <div class="login-group">
                 <label>USERNAME</label>
                 <input type="text" name="username" class="form-control<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="USERNAME" >
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>    
-            <div class="form-group">
+            <div class="login-group">
                 <label>PASSWORD</label>
                 <input type="password" name="password" class="form-control<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="PASSWORD">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
-            <div class="form-group">
+            <div class="login-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>

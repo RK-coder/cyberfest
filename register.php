@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_err = "Username can only contain letters, numbers, and underscores.";
     } else {
         // Prepare a select statement
-        $sql = "SELECT id FROM user WHERE username = ?";
+        $sql = "SELECT id FROM register WHERE username = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($degree_err) && empty($stream_err) && empty($year_err) && empty($college_err) && empty($gender_err) && empty($food_preference_err) && empty($image_err) ) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO user (name, username, password, confirm_password, phone, degree, stream, year, college, gender, food_preference, image_name, image_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO register (name, username, password, confirm_password, phone, degree, stream, year, college, gender, food_preference, image_name, image_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
@@ -191,7 +191,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="form.css">-->
     <style>
+          <link rel="stylesheet" href="form.css">
         body {
             font: 14px sans-serif;
         }
@@ -204,9 +206,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="rb">
+<header>
+    <div class="top-nav">
+        <div>
+        <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
+        COIMBATORE INSTITUTE OF TECHNOLOGY</h4>  
+        </div>  
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class="menu-button"></div>
+            </label>
+                <ul class="menu">
+                <li>   <a href="index.php" class="btn btn-primary">Home</a></li>
+                </ul>
+    </div>
+</header>
+    <div class="regform">
+        <div class="login-form">
         <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">        <div class="form-group">
                 <label>Input Name</label>
                 <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
@@ -301,6 +319,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
+    </div>
+    </div>
     </div>
 </body>
 <script>

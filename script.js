@@ -66,7 +66,7 @@ hour = minute * 60,
 day = hour * 24;
 
 // Set the date and time of your one-time event
-const eventDate = new Date('2023-09-30T23:59:59').getTime();
+const eventDate = new Date('2023-11-17T23:59:59').getTime();
 
 const x = setInterval(function () {
 const now = new Date().getTime(),
@@ -96,9 +96,10 @@ secondsElement.innerText = Math.floor((distance % minute) / second);
 
 //popup in events
 function openPopup(eventId) {
-    document.getElementById(eventId + "-popup").style.display = "block";
+    document.getElementById(eventId + "-popup").style.display = "block";  
 }
 
 function closePopup(eventId) {
     document.getElementById(eventId + "-popup").style.display = "none";
 }
+
