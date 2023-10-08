@@ -32,6 +32,7 @@
                 <li>   <a href="#section4">Contact</a></li>
                 <li>   <a href="#section5">Gallery</a></li>
                 <li>   <a href='login.php' class="btn btn-primary">Login</a></li>
+                <li>   <a href='register.php' class="btn btn-warning">Sign Up</a></li>
                 </ul>
     </div>
 </header>
