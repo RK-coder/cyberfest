@@ -96,8 +96,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="form.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
 <div class="lb">
 <header>
@@ -123,26 +128,81 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     ?>
 
 <div class="box">   
-    <div class="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <h2> LOGIN </h2>
+    <div class="login-form">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validateForm();">
+            <h2>LOGIN</h2><br>
             <div class="login-group">
-                <label>USERNAME</label>
-                <input type="text" name="username" class="form-control<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="USERNAME" >
+                <!-- <label for="username">USERNAME</label><br> -->
+                <div class="input-group">
+                    <input type="text" name="username" id="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="USERNAME">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                </div>
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
+            </div>
+
+            <br>   
             <div class="login-group">
-                <label>PASSWORD</label>
-                <input type="password" name="password" class="form-control<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="PASSWORD">
+                <!-- <label for="password">PASSWORD</label><br> -->
+                <div class="input-group">
+                    <input type="password" name="password" id="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="PASSWORD">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </div>
+                </div>
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
+             <br>
             <div class="login-group">
                 <input type="submit" class="btn btn-primary" value="Login">
+            </div><br>
+            <p>Don't have an account? <a href="register.php">Sign up now</a></p>
+            <div class="login-group">
+                <p>Having trouble logging in? <a href="#" id="openContactDialog">Forgot login credentials</a></p>
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <div id="contactUsDialog" class="dialog">
+                <div class="dialog-content">
+                    <span class="close-button" id="closeDialog">&times;</span><br>
+                    <h4>FORGOT LOGIN CREDENTIALS</h4>
+                    <p>If you need assistance with your login credentials, please contact our support team at cyberfest2023@gmail.com or Send "RESET PASSWORD" -  "YOUR USERNAME" to cyberfest2023@gmail.com from your registered mail id.</p>
+                </div>
+            </div>
         </form>
     </div>
 </div>
+
+<script>
+function validateForm() {
+    var username = document.forms[0]["username"].value;
+    var password = document.forms[0]["password"].value;
+    
+    if (username === "" || password === "") {
+        alert("Please insert valid credentials !");
+        return false;
+    }
+    
+    return true;
+}
+  // Get the dialog and close button elements
+var contactUsDialog = document.getElementById("contactUsDialog");
+var closeDialogButton = document.getElementById("closeDialog");
+
+// Get the link to open the dialog
+var contactLink = document.getElementById("openContactDialog");
+
+// Show the dialog when the link is clicked
+contactLink.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+    contactUsDialog.style.display = "block";
+});
+
+// Close the dialog when the close button is clicked
+closeDialogButton.addEventListener("click", function () {
+    contactUsDialog.style.display = "none";
+});
+
+</script>
 </div>
 </body>
 </html>

@@ -103,3 +103,39 @@ function closePopup(eventId) {
     document.getElementById(eventId + "-popup").style.display = "none";
 }
 
+/*const element = document.querySelector('.fade-in');
+element.classList.add('animation');*/
+
+// Add this JavaScript to your existing script.js or in a separate script file
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to add animation class when an element enters the viewport
+function animateOnScroll() {
+    const scrollSections = document.querySelectorAll('.scroll-section');
+    scrollSections.forEach((section) => {
+        if (isInViewport(section)) {
+            section.classList.add('animate-section');
+        }
+    });
+}
+
+// Event listener to trigger animation on scroll
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+
+animateOnScroll(); // Initial check to animate elements that are already in the viewport
+
+$(document).ready(function () {
+    //change selectboxes to selectize mode to be searchable
+       $("select").select2();
+    });

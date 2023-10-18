@@ -39,32 +39,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
-        // Prepare an update statement
-        $sql = "UPDATE user SET password = ? WHERE id = ?";
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        // Prepare an update statement
+        $sql = "UPDATE register SET password = ?, confirm_password = ? WHERE id = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
-            
+            mysqli_stmt_bind_param($stmt, "ssi", $param_password, $param_confirm_password, $param_id);
+        
             // Set parameters
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $param_confirm_password = $confirm_password; // Store the confirm password as-is
             $param_id = $_SESSION["id"];
-            
+        
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Password updated successfully. Destroy the session, and redirect to login page
-                session_destroy();
-                header("location: login.php");
+            if (mysqli_stmt_execute($stmt)) {
+        
+                // Close the statement
+                mysqli_stmt_close($stmt);
+        
+                 // Password updated successfully. Show an alert.
+                 echo '<script>alert("Password changed successfully.");</script>';
+
+               // Redirect to the login page after the alert
+                  echo '<script>window.location.href = "login.php";</script>';
                 exit();
-            } else{
+            } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
         }
+        
     }
-    
     // Close connection
     mysqli_close($link);
 }
@@ -82,6 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
+    
     <div class="wrapper">
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
