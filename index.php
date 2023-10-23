@@ -40,6 +40,7 @@
                 <li>   <a href="#section1">Home</a></li>
                 <li>   <a href="#section2">About</a></li>
                 <li>   <a href="#section3">Events</a></li>
+                <li>   <a href="#section4">Sponsors</a></li>
                 <li>   <a href="#section4">Contact</a></li>
                 <li>   <a href="#section5">Gallery</a></li>
                 <li>   <a href='login.php' class="btn btn-primary">Login</a></li>
@@ -48,7 +49,7 @@
     </div>
 </header>
     
-    <section id="section1">
+    <section id="section1" >
         <div class="heading"><br> 
             <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>  <br>
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4><br>
@@ -57,7 +58,7 @@
             <h4><br>TECHODYSSEY : A JOURNEY THROUGH THE WORLD OF TECHNOLOGY</h4> <br>
         
             <div class="timer">
-                <h2 id="headline">Countdown to the Event</h2>
+                <h2 id="headline">COUNTDOWN TO THE EVENT</h2>
                 <div id="countdown">
                     <ul>
                     <li><span id="days"></span>days</li>
@@ -70,7 +71,7 @@
         </div>
     </section>
     <div class="container">
-        <section id="section2">
+        <section id="section2" class="scroll-section">
         <h2 style="text-align:center">ABOUT CYBERFEST 2K23</h2><br><br>
         <p><i>CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY.
             THIS EVENT SERVES AS A BEACON OF INSPIRATION, GUIDING INDIVIDUALS TO SHARPEN THEIR SOCIO-TECHNICAL SKILLS.
@@ -80,160 +81,278 @@
         </section>  
         <br><br><br><br>
 
-        <section id="section3">
-        <h2 style="text-align:center">EVENTS</h2><br><br>
-        <div class="subevents-container">
-  <!-- Category 1: Coding Challenges -->
-  <div class="subevent-category">
-    <h3>Category 1</h3>
-        <div class="subevent-details" id="hackathon-details" data-event-id="1" onclick="openPopup('event1')">
-            <h2>LOGIC LORE</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.</p>
-        </div>
-        
-        <br><br>
+        <section id="section3" class="section">
+        <h2 style="text-align:center">EVENTS</h2><br>
+        <h3 style="text-align:center; color:#FF7676">OFFLINE EVENTS</h3>
+                <div class="subevents-container">
+     
+                   <!-- Category 1: -->
+                   <div class="subevent-category">
+                    <h3> &nbsp; &nbsp; &nbsp; Category 1</h3>
+                    <div class="category">
+                        <br>
+                        <div class="subevent-details" data-event-id="1" onclick="openPopup('event1')">
+                            <h2>QUANTUM QUEST</h2>
+                            <div class="logoimg">
+                                <img src="QQ.png" alt="logo" style="width:100%">
+                            </div><br>
+                            <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.</p>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;    
+                    
+                        <div class="subevent-details"  data-event-id="2" onclick="openPopup('event2')">
+                            <h2>FUN FORUM</h2>
+                            <div class="logoimg">
+                                <img src="loading.jpg" alt="logo" style="width:50%">
+                            </div><br>
+                            <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
+                        </div>
+                    </div>
+                    </div>
 
-        <div class="subevent-details" id="cipher-details" data-event-id="2" onclick="openPopup('event2')">
-            <h2>FUN FORUM</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
-        </div>
-    </div>
+                    <!-- Category 2: -->
+                    <div class="subevent-category">
+                    <h3> &nbsp; &nbsp; &nbsp;  Category 2</h3>
+                    <div class="category">
+                        <div class="subevent-details" data-event-id="3" onclick="openPopup('event3')">
+                            <h2>LOGIC LORE</h2>
+                            <div class="logoimg">
+                                <img src="LL.jpg" alt="logo" style="width:50%">
+                            </div><br>
+                            <p>The canvas of code awaits your artistry</p>
+                        </div>
+                        &nbsp;&nbsp; &nbsp; &nbsp; 
 
-    <!-- Category 2: Cybersecurity -->
-    <div class="subevent-category">
-        <h3>Category 2</h3>
+                        <div class="subevent-details"  data-event-id="4" onclick="openPopup('event4')">
+                            <h2>Maze Runners</h2>
+                            <div class="logoimg">
+                                <img src="MR.png" alt="logo" style="width:100%">
+                            </div>
+                            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+                        </div>
+                    </div>
+                    </div>
 
-        <div class="subevent-details" data-event-id="3" onclick="openPopup('event3')">
-            <h2>QUANTUM QUEST</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Explore the world of cybersecurity and decode challenging puzzles to protect digital assets.</p>
-        </div>
-        
-        <br><br>
-
-        <div class="subevent-details" id="cipher-details" data-event-id="4" onclick="openPopup('event4')">
-            <h2>Maze Runners</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
-        </div>
-    </div>
-
-    <!-- Category 3: SHUTTER SPECTRUM -->
-    <div class="subevent-category">
-        <h3>Category 3</h3>
-
-        <div class="subevent-details" data-event-id="5" onclick="openPopup('event5')">
-            <h2>SHUTTER SPECTRUM</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
-        </div>
-        
-        <br><br>
-
-        <div class="subevent-details" id="cipher-details" data-event-id="6" onclick="openPopup('event6')">
-            <h2>Idea Launch</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
-        </div>
-    </div>
-
-        <!-- Category 4: STICKEEZ MATE -->
-        <div class="subevent-category">
-        <h3>Category 4</h3>
-
-        <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
-            <h2>STICKEEZ MATE</h2>
-            <div class="logoimg">
-                <img src="loading.jpg" alt="logo">
-            </div>
-            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
-        </div>
-        </div>
+                    <!-- Category 3:  -->
+                    <div class="subevent-category">
+                    <h3> &nbsp; &nbsp; &nbsp; Category 3</h3>
+                    <div class="category">
+                        <div class="subevent-details" data-event-id="6" onclick="openPopup('event5')">
+                            <h2>Idea Launch</h2>
+                            <div class="logoimg">
+                                <img src="ILL.png" alt="logo" style="width:90%">
+                            </div>
+                            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+                        </div>
+                    </div><br>
+                    </div>
+                </div>
+                <br>
+                <h3 style="text-align:center; color:#FF7676"> ONLINE EVENTS </h3>
+                <div class="subevents-container">
+                
+                    <!-- Category 4:  -->
+                    <div class="subevent-category"><br>
+                    <h3> &nbsp; &nbsp; &nbsp; Category 4</h3>
+                    <div class="category">
+                        <div class="subevent-details" data-event-id="5" onclick="openPopup('event6')">
+                            <h2>SHUTTER SPECTRUM</h2>
+                            <div class="logoimg">
+                                <img src="loading.jpg" alt="logo" style="width:50%">
+                            </div>
+                            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+                        </div><br>
+                    </div><br>
+                    <h3> &nbsp; &nbsp; &nbsp; Category 5 </h3>
+                    <div class="category">
+                        <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
+                            <h2>STICKEEZ MATE</h2>
+                            <div class="logoimg">
+                                <img src="loading.jpg" alt="logo" style="width:50%">
+                            </div>
+                            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
     </div>
     <div class="popup-overlay" id="event1-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event1')">&#10006;</span>
-                <h2>LOGIC LORE</h2>
+                <h2>QUANTUM QUEST</h2><br>
+                <h4><b>DESCRIPTION</b></h4>
+                <p>Welcome to the Quiz Competition, a thrilling and intellectually stimulating event designed to challenge your knowledge, teamwork, and quick thinking. In this competition, participants will be put to the test across three intense rounds, each with its unique set of challenges. Let's take a closer look at what to expect.</p>
+                <h4><b>EVENT DETAILS</b></h4>
+                <h5>No of Rounds: 3</h5>
+                <h5>Team size: 2</h5><br>
+                <h5>First Round - Online Portal (MCQs) :</h5>
+                <ul>
+                  <li>  The first round will be conducted on an online portal and will consist of multiple-choice questions (MCQs).</li>
+                <li>	Participants are required to log in to the online portal and answer the MCQ questions.</li>
+                <li>	The leaderboard will be monitored by the organizers, and the top-performing teams will be selected to advance to the second round.</li>
+
+                </ul>
+                <h5>Second Round - Pen and Paper Test :</h5>
+                <ul>
+                    <li>	Only the teams selected from the first round will proceed to the second round.</li>
+                    <li>	The second round will be a pen and paper test, and participants will be provided with required materials(Pen, Paper and Notepad)</li>
+                    <li>	The test will include questions that require written answers.</li>
+                    <li>	The time limit for the second round will be strictly enforced.</li>
+                    <li>	The scores from this round will be used to shortlist teams for the final round.</li>
+
+                </ul>
+                <h5>Third Round (Final Round) - Buzzer Round :</h5>
+                <ul>
+                    <li>	The top 5 teams, based on the scores from the second round, will advance to the final round.</li>
+                    <li>	The final round will be a buzzer round, and online buzzers will be provided.</li>
+                    <li>	Teams will compete to answer questions using the online buzzers, and the timing and accuracy of their responses will be crucial.</li>
+                    <li>	The team that scores the highest in this round will be declared the winner of the quiz competition.</li>
+
+                    </ul>
+                <p>In case of a tie, organizers will have a tie-breaker question to determine the winner</p>
+                <h4><b>GENERAL RULES:<b></h4>
+                <ul>
+                <li>	Participants must register for the competition in advance, adhering to the registration deadlines set by the organizers.</li>
+                <li>	Participants should have a stable internet connection and access to a suitable device, such as a computer or laptop, for the online portal round. Ensure that mobile data is enabled.</li>
+                <li>	In the pen and paper rounds, the use of unauthorized materials, such as textbooks, notes, or electronic devices, is strictly prohibited.</li>
+                <li>	Adhere to time limits for answering questions in all rounds. The organizers will enforce these time limits to maintain fairness and efficiency.</li>
+                <li>	Participants should not engage in any form of cheating, including communication with external sources, or any activity that could give an unfair advantage.</li>
+                </ul>
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <h4>EVENT COORDINATORS:</h4> 
                 <p>
-                    <b>SLOGAN: </b>   
-                    <p> The canvas of code awaits your artistry</p>
-                    <b> DESCRIPTION: </b>
-                    <p>	The Logic Lore is a coding competition designed to celebrate the art of programming and debugging. Whether you are seasoned coder or just starting your coding journey, this contest is for you. It's an opportunity to showcase your coding prowess and win fantastic prizes!</p>
-                    <b> TEAM SIZE: 2</b><br>
-                    <b> NO OF ROUNDS: 2<br><br>
-                    <b> ROUND 1: </b>
-                    <p> During the initial stage, there is a technical puzzle that assesses student's understanding of data structures and core computer science principles. Those who achieve top positions will progress to the subsequent round. </p>
-                    <b> ROUND 2: </b>
-                    <p> In the second round of the competition, participants will encounter a coding phase that comprises two distinct tasks. The first task places a primary emphasis on problem solving skills. Following the problem solving segment, the subsequent task shifts the focus to debugging.</p>
-                    <b> GENERAL RULES: </b>
-                    <p> In case of a tie, the team that solves the problem first wins 
-                        Any malpractice won't be tolerated and the team will be disqualified.
-                        The decision made by the panel cannot be overruled.
-                    </p>
-                <button class="btn btn-primary">LOGIN TO REGISTER FOR LOGIC LORE</button>
+                    For any queries participants can contact the below listed committee members.
+                </p>
+                    <ul>
+                    <li>	Vishwak Shana	-	9150414644</li>
+                    <li>	Sindhu	-	9791918048</li>
+                    <li>	Swetha	-	8667784051</li>
+                    <li>	Naga Harish	-	 6380833476</li>
+                    </ul>
+               
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <div style="text-align: center;">
+                <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">Login to register for QUANTUM QUEST</button>
+                </div>
             </div>
         </div>
 
         <div class="popup-overlay" id="event2-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event2')">&#10006;</span>
-                <h2>FUN FORUM</h2>
+                <h2>FUN FORUM</h2><br>
                 <p>
-                <b> SLOGAN: </b> <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
-                <b> DESCRIPTION: </b>
+                <h4> DESCRIPTION </h4>
                 <p> Join us for a lively computer department event filled with fun games that will challenge your skills and spark your competitive spirit! It's a fantastic opportunity to unwind, bond with fellow computer enthusiasts, and celebrate the joy of gaming. </p>
-                <b> NO OF ROUNDS:  3</b><br><br>
-                <b> ROUND 1: </b>
-                <p>  Get ready to dive into the digital battlefield! In this exciting round of our computer department's fun games event, participants will compete in thrilling gaming challenges and showcasing their gaming prowess. It's a test of wit and reflexes that will leave you on the edge of your seat. Are you up for the challenge?</p>
-                <b> ROUND 2: </b>
-                <p> In this electrifying battle of our fun-filled computer department games event is here! Get ready for another round of exhilarating challenges, friendly competition, and non-stop excitement. Whether you're a gaming pro or just looking to have a great time, this event is for you. Join us and level up your gaming experience! </p>
-                <b> ROUND 3: </b>
-                <p> Welcome to the exhilarating grand finale of our computer department's fun game event!. The final round promises intense competition, technical challenges, and the chance to prove yourself as the ultimate gamer. Join us for an epic battle of wits and skills, where only the best will emerge victorious and claim the title of champion!  </p>                <button class="btn btn-primary">LOGIN TO REGISTER FOR FUN FORUM</button>
+                <h4><b>EVENT DETAILS</b></h4>
+                <h5> NO OF ROUNDS:  2</h5>
+                <h5> Team Size : 2 </h5><br>
+                <h5> ROUND 1: </h5>
+                <p>  <ul>Get ready to dive into the digital battlefield! In this electrifying battle of our fun-filled computer department games event is here!  In this exciting round of our fun games event, participants will compete in thrilling gaming challenges and showcasing their gaming prowess. It's a test of wit and reflexes that will leave you on the edge of your seat. Are you up for the challenge?</ul></p>
+                <h5> ROUND 2 (FINALE):</h5>
+                <p> <ul>Welcome to the exhilarating grand finale of our computer department's fun game event!. The final round promises intense competition, technical challenges, and the chance to prove yourself as the ultimate gamer. Join us for an epic battle of wits and skills, where only the best will emerge victorious and claim the title of champion!</ul> </p>
+                <h4>GENERAL RULES</h4>
+                <ul>
+                <li>	Emphasize the importance of fair play. Cheating or unsportsmanlike conduct can detract from the fun of the game.</li>
+                <li>	Outline any penalties for rule violations. Ensure that they are appropriate and fair.</li>
+                <li>	Be clear about how points are scored, and how a winner or winning team is determined. Consider tie-breaker rules if necessary and that team will be rematch.</li>
+                <li>	Most importantly, remind everyone that the primary goal is to have fun. Games and fun events are meant for enjoyment and relaxation, so keep the atmosphere light and enjoyable.</li>
+                </ul>
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <div style="text-align: center;">
+                    <button type="submit" name="register" value="FUN FORUM|Cat1" class="btn btn-primary">Login to register for FUN FORUM</button>
+                </div>
+
             </div>
         </div>
 
         <div class="popup-overlay" id="event3-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event3')">&#10006;</span>
-                <h2>QUANTUM QUEST</h2>
-                <p>Detailed description of event 3.</p>
-                <button class="btn btn-primary">LOGIN TO REGISTER FOR QUANTUM QUEST</button>
+                <h2>LOGIC LORE</h2>
+                <p>    
+                    <h4> DESCRIPTION </h4>
+                    <p>	The Logic Lore is a coding competition designed to celebrate the art of programming and debugging. Whether you are seasoned coder or just starting your coding journey, this contest is for you. It's an opportunity to showcase your coding prowess and win fantastic prizes! </p>
+                    <h4><b>EVENT DETAILS</b></h4>
+                    <h5> TEAM SIZE: 2</h5><br>
+                    <h5> NO OF ROUNDS: 2<br><br>
+                    <h5> ROUND 1 : </h5>
+                    <p> During the initial stage, there is a technical puzzle that assesses student's understanding of data structures and core computer science principles. Those who achieve top positions will progress to the subsequent round. </p>
+                    <h5> ROUND 2 : </h5>
+                    <p> In the second round of the competition, participants will encounter a coding phase that comprises two distinct tasks. The first task places a primary emphasis on problem solving skills. Following the problem solving segment, the subsequent task shifts the focus to debugging.</p>
+                    <h4> GENERAL RULES </h4>
+                    <p><li> In case of a tie, the team that solves the problem first wins </li>
+                    <li>Any malpractice won't be tolerated and the team will be disqualified.</li>
+                    <li>The decision made by the panel cannot be overruled.</li>
+                    </p>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <div style="text-align: center;">
+                <button type="submit" name="register" value="LOGIC LORE|Cat2" class="btn btn-primary">Login to register for LOGIC LORE</button>
+                </div>
             </div>
         </div>
 
         <div class="popup-overlay" id="event4-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event4')">&#10006;</span>
-                <h2>MAZE RUNNERS</h2>
-                <p>Detailed description of event 4.</p>
-                <button class="btn btn-primary">LOGIN TO REGISTER FOR MAZE RUNNERS</button>
+                <h2>MAZE RUNNERS</h2><br>
+                <h4>DESCRIPTION</h4>
+                <p>
+                Get ready for Maze Runners to treasure like no other! Play the task with your smart minds and 
+                strategies for all levels and spot the finals.
+                Join us and discover the adventure to push your strategic limits and unlock a new way to win the 
+                game, Don't missout-try your possibility and aim for hunt!</p>
+                <h4><b>EVENT DETAILS</b></h4>
+                <h5>No of Rounds: 2</h5>
+                <h5> Team size: 6</h5>
+                <p>
+                <h5>ROUND 1 :</h5>
+                <ul>
+                <li> Engage your mind with fun & play.</li>
+                <li> Use your smartness for explore the task.</li>
+                <li> Elimination Based On Score</li><br>
+                </ul>
+                <h5>Challenger's Next Stage: </h5> The Contestant will Level up to next Stage and explore the 
+                source of fun.</p>
+                <h5>ROUND 2 :</h5>
+                <ul>
+                <li> The ultimate test of strategy and nerves!</li>
+                <li> Emphasize the primary goal to win and enjoy the adventure.</li>
+                <li> Examine the game, and explore the treasury !</li><br>
+                </ul>
+                <h4>GENERAL RULES</h4>
+                <ul><li> Participants are need to follow the game rules and regulations reveal by the instructor.</li>
+                <li> Any form of cheating or against the rules ,will result in immediate disqualification.</li>
+                <li> Participants are required to maintain respectful and professional behavior throughout.
+                the event.</li></ul>
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <h4>EVENT COORDINATORS</h4>
+               <p> For any queries participants can contact the below listed committee members.</p>
+               <ul> 
+               <li> Syed Abdul Rahman S - 7092550028</li>
+                <li> Oviya C - 8778653548</li>
+                <li> Kanna B.S - 8608744936</li>
+                <li> Viswa - 6374353499</li>
+               </ul>
+                </p>
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <div style="text-align: center;">
+                <button type="submit" name="register" value="MAZE RUNNERS|Cat2" class="btn btn-primary">Login to register for MAZE RUNNERS</button>
+                </div>
             </div>
         </div>
 
         <div class="popup-overlay" id="event5-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event5')">&#10006;</span>
-                <h2>SHUTTER SPECTRUM</h2>
-                <b>Description:   </b>
+                <h2>IDEA LAUNCH</h2><br>
+                <h4>DESCRIPTION   </h4>
                    <p> The objective of this event is to conduct a paper presentation . Each team can choose the topic from the given set of problem statements . Prototype has to be submitted in prior , the shortlisted team will present their ideas in front of juries.</p>
-                    <b> Team size  : 3 or 4 members </b><br><br>
-                    <b> Event Rules : </b>
-                    <p> 1. Each team would comprise of 3 or 4 members including the team leader.<br>
+                   <h4><b>EVENT DETAILS</b></h4> 
+                   <h5> TEAM SIZE  : 3 or 4 members </h5>
+                    <h4> EVENT RULES  </h4><ul>
+                     1. Each team would comprise of 3 or 4 members including the team leader.<br>
                     2. As the software edition of the hackathon is digital product development competition, majority of the team members must be well versed with programming skills.<br>
                     3. Team members should work up to prototype design to the given problem statement.<br>
                     4. All team members should be from same college; no inter-college teams are allowed. However, members from different branches of the same college/ institute are encouraged to form a team.<br>
@@ -242,28 +361,44 @@
                     7. Submission with more than 20% plagiarism will be rejected.<br>
                     8. The assumption made, strategies and problem modelling must be included in the solution.<br>
                     9. The team have first submitted the idea for the problem/abstract before one week prior to the final documentation. Then, submit the documentation before the last date for document submission.<br>
-                    10. The selected team will come to college on the event date to present their document</p>
-                    <b> General Rules:   </b><p>
-                    •	Any malpractice will not be tolerated and team will be disqualified.  <br>
-                    •	The decision made by the panel cannot be overruled.  <br>
-                    </p>                <button class="btn btn-primary">LOGIN TO REGISTER FOR SHUTTER SPECTRUM</button>
+                    10. The selected team will come to college on the event date to present their document</ul></p>
+                    <h4> GENERAL RULES   </h4><ul>
+                    <li>	Any malpractice will not be tolerated and team will be disqualified.</li> 
+                    <li>	The decision made by the panel cannot be overruled. </li></ul> 
+                    </p>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                   <h4> EVENT COORDINATORS   </h4>
+                    <p>For any queries participants can contact the below listed committee member :  </p>
+                    <ul>
+                    <li>	Soundharya - </li>
+                    <li>	Vignesh -</li>
+                    <li>	Ganga - </li>
+                    <li>	Kaja Mohyaddeen - </li>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <div style="text-align: center;">
+                <button type="submit" name="register" value="IDEA LAUNCH|Cat3" class="btn btn-primary">Login to register for IDEA LAUNCH</button>
+            </div>
             </div>
         </div>
 
         <div class="popup-overlay" id="event6-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event6')">&#10006;</span>
-                <h2>IDEA LAUNCH</h2>
+                <h2>SHUTTER SPECTRUM</h2>
                 <p>Detailed description of event 6.</p>
-                <button class="btn btn-primary">LOGIN TO REGISTER FOR IDEA LAUNCH</button>
+
+                    <div style="text-align: center;">
+                <button type="submit" name="register" value="SHUTTER SPECTRUM|Cat4" class="btn btn-primary">Login to register for SHUTTER SPECTRUM</button>
+                    </div>
             </div>
         </div>
 
         <div class="popup-overlay" id="event7-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event7')">&#10006;</span>
-                <h2>STICKEEZ MATE</h2>
-                <b>Description: </b>
+                <h2>STICKEEZ MATE</h2><br>
+                <h4><b>Description</b> </h4>
                   <p>  Get ready for Stickeez a chess showdown like no other! The Elimination Round kicks off the action, 
                     where players go head-to-head, making every move count in a bid to secure a spot in the finals. It's all 
                     about survival of the smartest.
@@ -274,59 +409,86 @@
                     Chess is a world of endless possibilities, and this event is your chance to explore them all. Don't miss 
                     out-try your possibility and aim for chess glory!
                 </p>
-                    <b>No of Rounds: 2 </b> <br> <b>Team size: Individual Play</b><br>
-                    <b> Round 1:  </b><br>
-                    <p> • Battle against fellow chess enthusiasts in a thrilling elimination round.
-                    • Only the strongest minds will advance to the next stage.
-                    • Show your mettle and secure your spot in the finals!
-                    • Elimination Based On Score
-                    Challenger's Delight: Fun Retry Challenge : (Those who wants to give wildcard entry)
+                <h4><b>EVENT DETAILS</b></h4>    
+                <h5>NO OF ROUNDS: 2 </h5> 
+                    <h5>TEAM SIZE: INDIVIDUAL PLAY</h5>
+                    <h5> ROUND 1 : </h5>
+                    <ul>
+                      <li> Battle against fellow chess enthusiasts in a thrilling elimination round.</li>
+                         <li> Only the strongest minds will advance to the next stage.</li>
+                         <li> Show your mettle and secure your spot in the finals!</li>
+                         <li> Elimination Based On Score</li>
+                    </ul>
+                   <h5> Challenger's Delight: Fun Retry Challenge :</h5>(Those who wants to give wildcard entry)
                     This Challenge consist of a Funny chess quiz and optional chess puzzle race between 
                     participants</p><br>
-                    <b> Round 2:  </b>
-                    <p> • The ultimate test of strategy and nerves!
-                    • Compete against the best of the best in a high-stakes arena round.
-                    • Score more wins, and claim the title of Chess Champion!</p><br>
-                    <b> General Rules:  </b>
-                    <p> • Participants are expected to uphold the spirit of fair play and sportsmanship.
-                    • Any form of cheating, including external assistance or computer engine usage, will 
-                    result in immediate disqualification.
-                    • Participants are required to maintain respectful and professional behavior throughout 
-                    the event.
-                    • The event will be conducted on an online Li-chess platform.(Everyone should have 
-                    account on Li-Chess , Instruction’s are shared later)
-                    • Participants must have a stable internet connection and a compatible device.</p>
-                    <b> How are scores calculated? </b>
-                    <p> • A win has a base score of 2 points, a draw 1 point, and a loss is worth no points. If 
+                    <h5> ROUND 2 :  </h5>
+                    <ul>  <li> The ultimate test of strategy and nerves!</li>
+                    <li> Compete against the best of the best in a high-stakes arena round.</li>
+                    <li> Score more wins, and claim the title of Chess Champion!</li></ul>
+                    <h4> GENERAL RULES  </h4>
+                    <ul>
+                    <p>  
+                    <li> Participants are expected to uphold the spirit of fair play and sportsmanship.</li>
+                    <li> Any form of cheating, including external assistance or computer engine usage, will 
+                    result in immediate disqualification.</li>
+                    <li> Participants are required to maintain respectful and professional behavior throughout 
+                    the event.</li>
+                    <li> The event will be conducted on an online Li-chess platform.(Everyone should have 
+                    account on Li-Chess , Instruction’s are shared later)</li>
+                    <li> Participants must have a stable internet connection and a compatible device.</li></p>
+                    <h5> How are scores calculated? </h5>
+                    <p>  <li> A win has a base score of 2 points, a draw 1 point, and a loss is worth no points. If 
                     you win two games consecutively you will start a double point streak, represented by 
                     a flame icon. The following games will continue to be worth double points until you 
                     fail to win a game. That is, a win will be worth 4 points, a draw 2 points, and a loss 
                     will still not award any points. For example, two wins followed by a draw will be 
-                    worth 6 points: 2 + 2 + (2 x 1)</p>
-                    <b> How does the pairing work? </b>
-                    <p> • At the beginning of the tournament, players are paired based on their rating. As soon 
+                    worth 6 points: 2 + 2 + (2 x 1),</li></p>
+                    <h5> How does the pairing work? </h5>
+                    <p>  <li> At the beginning of the tournament, players are paired based on their rating. As soon 
                     as you finish a game, return to the tournament lobby: you will then be paired with a 
                     player close to your ranking. This ensures minimum wait time, however you may not 
                     face all other players in the tournament. Play fast and return to the lobby to play more 
-                    games and win more points.</p>
-                <button class="btn btn-primary">LOGIN TO REGISTER FOR STICKEEZ MATE</button>
-            </div>
+                    games and win more points.</li></p>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                    <h4>EVENT COORDINATORS</h4><br>
+                    <p>
+                        For any queries participants can contact the below listed committee members.
+                    </p>
+                    <ul>
+                    <li>Arunkumar M - 9500852903 </li>
+                    <li> Yogamithra - 7339596177 </li>
+                    <li> Navin Shantha Kumar U - 8870449328</li>
+                    <li> Vikasini S - 8870244556</li><br>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                    <div style="text-align: center;">
+              
+                    <button type="submit" name="register" value="STICKEEZ MATE|Cat5" class="btn btn-primary">Login to register for STICKEEZ MATE</button>
+                    </div>
+                </div>
         </div>
 
         </section>
-
-        <section id="section4"><br><br>
+        <section id="section4" class="scroll-section"><br><br>
+    <div class="sponsor">
+    <h2 style="text-align: center;">OUR SPONSORS</h2>
+    </div>
+    </section>
+        <section id="section5" class="scroll-section"><br><br>
         <div class="contact">
-        <h2 style="text-align: center;">Contact</h2>
-            <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA==" class="fa fa-instagram"></a>
-            <a href="mailto:cyberfest2023@gmail.com"class="fa fa-envelope"></a>
+        <h2 style="text-align: center;">CONTACT</h2>
+            <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA=="target="_blank" class="fa fa-instagram"></a>
+            <a href="mailto:cyberfest2023@gmail.com"target="_blank"class="fa fa-envelope"></a>
             <a href="tel:+91-7598596904"class="fa fa-phone"></a>
+            <a href="https://www.linkedin.com/in/cit-cyberfest23/"target="_blank"class="fa fa-linkedin "></a>
         </div>
     </section>
 
-        <section id="section5">
+        <section id="section6" class="scroll-section">
         <div class="gallery">
-            <h2>Event Gallery</h2>
+            <h2>EVENT GALLERY</h2>
             <img src="gallery/image1.jpg" alt="Event Photo">
             <img src="gallery/image2.jpg" alt="Event Photo">
         </div>

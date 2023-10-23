@@ -81,16 +81,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        
+       
+        
     </style>
 </head>
 <body>
-    
+    <header>
+        <div class="top-nav">
+            <div>
+                <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
+                COIMBATORE INSTITUTE OF TECHNOLOGY</h4>  
+            </div>  
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                <div class="menu-button"></div>
+                </label>
+                <ul class="menu">
+                    <li>   <a href="welcome.php">Home</a></li>
+                    <li>   <a href="welcome.php#section2">About</a></li>
+                    <li>   <a href="welcome.php#section3">Events</a></li>
+                    <li>   <a href="welcome.php#section4">Sponsors</a></li>
+                    <li>   <a href="welcome.php#section5">Contact</a></li>
+                    <li>   <a href="welcome.php#section6">Gallery</a></li>
+                    <li>   <a href="reset-password.php" >Reset Password</a></li>
+                    <li>   <a href="profile.php" class="btn btn-warning">Profile</a></li>
+                    <li>   <a href="logout.php" class="btn btn-danger ml-3">Sign Out</a></li>
+                </ul>
+        </div>
+    </header>
+    <div class="reset">
+<h2>Reset Password</h2><br>
     <div class="wrapper">
-        <h2>Reset Password</h2>
-        <p>Please fill out this form to reset your password.</p>
+       
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group">
                 <label>New Password</label>
@@ -107,6 +137,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
             </div>
         </form>
-    </div>    
+    </div> 
+    </div>   
 </body>
 </html>

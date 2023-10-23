@@ -138,6 +138,12 @@ header {
         font-size: 27px;
     }
 }
+.scroll-section h2{
+  color: #FFCD4B;
+}
+.section h2{
+  color: #FFCD4B;
+}
 
 .logo {
     margin-right: 100px; /* Adjust the value to your desired spacing */
@@ -152,7 +158,7 @@ header {
 .heading {
     text-align: center;
     background-image:url( techu.png);
-    background-size: cover;
+    background-size: cover; 
     background-position: center;
     position: relative;
     height: auto; /* Set the desired height for the canvas background */
@@ -199,14 +205,21 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
     padding-left:auto;
 }
 .category{
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   border: 1px solid #E0E0E0;
-  padding: 1rem;
+  padding: 1rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+  background-color: #000000; /* Background color for the category */
+  padding: 30px; /* Add padding for separation */
+  border: 1px solid #ccc; /* Add a border around each category */
 }
+
 .subevent-details {
     width: 300px; /*calc(30% - 20px);*/
     height: 300px; /* Set the height for each box */
@@ -216,7 +229,7 @@ header {
     background-size: cover;
     padding: 1rem;
     border-radius: 10px;
-    border: 1px solid #E0E0E0;
+    /* border: 1px solid #E0E0E0; */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     box-sizing: border-box;
@@ -225,11 +238,13 @@ header {
     cursor: pointer;
     align-items: center;
     text-align: center;
+   
+    position: relative;
 }
-.logoimg img {
-  max-width: 50%;
-  max-height: 50%;
-}
+/* .logoimg img {
+  max-width: 100%;
+  max-height: 100%;
+} */
 .subevent-details h2 {
     color: #ffffff;
     margin-bottom: 0.5rem;
@@ -270,15 +285,93 @@ header {
     .subevent-details {
         width: 300px;
         height: 300px;
+        margin-bottom: 20px;
+        text-align: center;
     }
+    .category {
+      display: flex;
+      flex-direction: column; /* Change layout to vertical */
+      align-items: center;
+      text-align: center;
+      padding: 20px; /* Adjust spacing for smaller screens */
+  }
+}
+/* Styles for the events */
+.event-box {
+  width: 200px;
+  height: 50px;
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  margin: 10px;
 }
 
+/* Styles for the popups */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 500;
+}
+
+.popup-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+   background-image: linear-gradient(to bottom left, rgb(254, 1, 142), rgb(8, 3, 77) , rgb(8, 3, 77) , rgb(8, 3, 77)); 
+  /* background-image: linear-gradient(to top right, rgb(19, 41, 242), rgb(187, 16, 187), rgb(19, 41, 242) ); */
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.popup-content h2{
+  text-align: center;
+}
+.popup-content h4{
+  color: rgb(244, 3, 3);
+  font-size: 1rem;
+  font-weight: 900;
+}
+.popup-content h5{
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.popup-content ul{
+  font-weight: 300;
+}
+
+.close-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.sponsor{
+  position: relative;
+  z-index: 1;
+}
 /* Center the contact and gallery sections */
 .contact {
     text-align: center;
     font-size: 34px;
     margin: 4rem 0;
-    z-index: -2;
+    position: relative;
+    z-index: 1;
 }
 
 .symbol {
@@ -297,13 +390,15 @@ header {
   
   .fa:hover {
      text-decoration-line: none;
-      color: #d3ff11;
+      color: #c6a308;
   }
 
 
 .gallery {
     text-align: center;
     margin: 4rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery img {
@@ -395,7 +490,7 @@ header {
   transform: rotate(-405deg);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .menu-button-container {
     display: flex;
   }
@@ -435,53 +530,7 @@ header {
     border-bottom: 1px solid #444;
   }
 }
- /* Styles for the events */
- .event-box {
-  width: 200px;
-  height: 50px;
-  background-color: #3498db;
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  cursor: pointer;
-  margin: 10px;
-}
-
-/* Styles for the popups */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.popup-content {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #000000;
-   background-image: linear-gradient(to bottom left, rgb(254, 1, 142), rgb(8, 3, 77) , rgb(8, 3, 77) , rgb(8, 3, 77)); 
-  /* background-image: linear-gradient(to top right, rgb(19, 41, 242), rgb(187, 16, 187), rgb(19, 41, 242) ); */
-  padding: 40px;
-  margin-top: 40px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  max-width: 80%;
-  max-height: 80%;
-  overflow-y: auto;
-  z-index: 4;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
+ 
 /*
 .fade-in {
   opacity: 0;
@@ -508,11 +557,121 @@ header {
 
 .scroll-section {
   opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 1s, transform 4s;
-}
-.scroll-section.animate-section {
-  opacity: 1;
-  transform: translateX(0);
+  transform: translateY(-20px); /* Change to translateY for vertical movement */
+  transition: opacity 1s, transform 3s;
 }
 
+.scroll-section.animate-section {
+  opacity: 1;
+  transform: translateY(0); /* Change to translateY for vertical movement */
+}
+ /* Designing dialog box */
+ #container {
+  display: none;
+  background-image: linear-gradient(to right, #66a80f, #c0eb75);
+  background-size:cover;
+  color: white;
+  position: absolute;
+  width: 350px;
+  border-radius: 5px;
+  left: 50%;
+  margin-left: -160px;
+  padding: 16px 8px 8px;
+  box-sizing: border-box;
+}
+
+/* Designing dialog box's okay button */
+#container .yes {
+  background-color: #5c940d;
+  display: inline-block;
+  border-radius: 5px;
+  border: 2px solid gray;
+  padding: 5px;
+  margin-right: 10px;
+  text-align: center;
+  width: 60px;
+  float: right;
+}
+
+#container .no {
+  background-color: #22b8cf;
+  display: inline-block;
+  border-radius: 5px;
+  border: 2px solid gray;
+  padding: 5px;
+  margin-right: 10px;
+  text-align: center;
+  width: 95px;
+  float: right;
+}
+
+#container .yes:hover {
+  background-color: #82c91e;
+}
+
+#container .no:hover {
+  background-color: #99e9f2;
+}
+
+/* Dialog box message decorating */
+#container .message {
+  text-align: left;
+  padding: 10px 30px;
+}
+
+/* profile section*/
+.profile {
+  text-align: center; /* Center the content inside the profile div */
+}
+.profile-content {
+  display: inline-block;
+  text-align: left;
+}
+.profile h1{
+  text-decoration: none;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e8d21d;
+  
+}
+.profile h3 {
+  text-align: left; /* Center the text within the content div */
+  margin-left: 25%;
+  color: #ce003e;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.profile table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+  margin-left: 25%;
+  background-color: #000000;
+}
+
+.profile th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  border-color: white;
+}
+.profile th{
+  text-align: center;
+  color: #039fbe;
+  font-weight: 700;
+}
+.wrapper{ 
+  padding: 20px; 
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #000000;
+  border: 1px solid black;
+  border-color: white;
+}
+.reset h2{
+  margin-top: 100px;  
+  text-align: center;
+  color: #e8d21d;
+}

@@ -82,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-
     // Validate the email address
     if (empty(trim($_POST["email"]))) {
     $email_err = "Please enter an email address.";
@@ -157,7 +156,7 @@ if (empty($transaction_number)) {
      $check_query = "SELECT id FROM register WHERE transaction_number = ?";
      $stmt = mysqli_prepare($link, $check_query);
      mysqli_stmt_bind_param($stmt, "s", $transaction_number);
-     mysqli_stmt_execute($stmt);
+     mysqli_stmt_execute($stmt);    
      mysqli_stmt_store_result($stmt);
  
      if (mysqli_stmt_num_rows($stmt) > 0) {
@@ -416,7 +415,7 @@ if (empty($transaction_number)) {
         .regform h2{
             text-align: center;
         }
-        .login-form {
+        .regi-form {
             max-width: 1200px;
             margin: 20px auto ;
             padding: 50px;
@@ -449,7 +448,7 @@ if (empty($transaction_number)) {
                 display: block;
                 width: 100%; /* One input in a row for small screens */
             }
-            .login-form{
+            .regi-form{
                 margin: 20px;
             }
         }
@@ -461,7 +460,7 @@ if (empty($transaction_number)) {
                 width: 45%; /* Two inputs in a row for medium screens */
             /*  margin-right: 5%; Adjust margin as needed for spacing */
             }
-            .login-form{
+            .regi-form{
                 margin: 20px;
             }
         }
@@ -472,7 +471,7 @@ if (empty($transaction_number)) {
                 display: inline-block;
                 width: 30%; /* Three inputs in a row for large screens */
             }
-            .login-form{
+            .regi-form{
                 margin: 20px;
             }
         }
@@ -507,7 +506,7 @@ if (empty($transaction_number)) {
 
     <div class="regform">
     
-        <div class="login-form">
+        <div class="regi-form">
         <h2><b>REGISTRATION</b></h2><br>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">        <div class="form-group">
                 <label>STUDENT NAME</label>
