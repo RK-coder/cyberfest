@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate Input Name
     if (empty(trim($_POST["name"]))) {
-        $name_err = "Please enter a name.";
+        $name_err = "";
     } else {
         $name = trim($_POST["name"]);
     }
@@ -508,54 +508,76 @@ if (empty($transaction_number)) {
     
         <div class="regi-form">
         <h2><b>REGISTRATION</b></h2><br>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">        <div class="form-group">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">        
+        <div class="form-group">
                 <label>STUDENT NAME</label>
-                <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
+                <input type="text" name="name"  required 
+                oninvalid="this.setCustomValidity('Enter your Name')"
+                oninput="this.setCustomValidity('')" 
+                class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>"   value="<?php echo $name; ?>" >
                 <span class="invalid-feedback"><?php echo $name_err; ?></span>
             </div>    &nbsp;&nbsp;
             <div class="form-group">
                 <label>USERNAME</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" name="username" required 
+                oninvalid="this.setCustomValidity('Enter a UserName Here')"
+                oninput="this.setCustomValidity('')"  class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
             &nbsp;&nbsp;
             <div class="form-group">
                 <label>PASSWORD</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <input type="password" name="password"  required 
+                oninvalid="this.setCustomValidity('Enter a Password')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>&nbsp;&nbsp;
 
             <div class="form-group">
                 <label>CONFIRM PASSWORD</label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <input type="password"  required 
+                oninvalid="this.setCustomValidity('Confirm the password')"
+                oninput="this.setCustomValidity('')" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>&nbsp;&nbsp;
 
             <div class="form-group">
                 <label>CONTACT NUMBER</label>
-                <input type="text" name="phone" class="form-control <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone; ?>">
+                <input type="text" name="phone" 
+                required 
+                oninvalid="this.setCustomValidity('Enter your phone number')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $phone; ?>">
                 <span class="invalid-feedback"><?php echo $phone_err; ?></span>
             </div>&nbsp;&nbsp;
 
             <div class="form-group">
                 <label>EMAIL ID</label>
-                <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                <input type="email" name="email"  required 
+                oninvalid="this.setCustomValidity('Enter your email address')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
                 <span class="invalid-feedback"><?php echo $email_err; ?></span>
             </div>&nbsp;&nbsp;
            
             <div class="form-group">
                 <label>REGISTRATION NUMBER</label>
-                <input type="text" name="reg_no" class="form-control <?php echo (!empty($reg_no_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $reg_no; ?>">
+                <input type="text" name="reg_no"  required 
+                oninvalid="this.setCustomValidity('Enter your registration number')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($reg_no_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $reg_no; ?>">
                 <span class="invalid-feedback"><?php echo $reg_no_err; ?></span>
             </div>&nbsp;&nbsp;
 
             <div class="form-group">
                 <label>DEGREE</label>
-                <select name="degree" id="degree" class="form-control <?php echo (!empty($degree_err)) ? 'is-invalid' : ''; ?>">
+                <select name="degree" id="degree" required 
+                oninvalid="this.setCustomValidity('Select your degree')"
+                oninput="this.setCustomValidity('')"class="form-control <?php echo (!empty($degree_err)) ? 'is-invalid' : ''; ?>">
                     <option value="" selected disabled>Select your degree</option>
                     <option value="MCA" <?php if ($degree === 'MCA') echo 'selected'; ?>>MCA</option>
                     <option value="ME" <?php if ($degree === 'ME') echo 'selected'; ?>>ME</option>
                     <option value="MTech" <?php if ($degree === 'MTech') echo 'selected'; ?>>MTech</option>
+                    <option value="MSc" <?php if ($degree === 'MSc') echo 'selected'; ?>>MSc</option>
+                    <option value="BE" <?php if ($degree === 'BE') echo 'selected'; ?>>BE</option>
+                    <option value="BTech" <?php if ($degree === 'BTech') echo 'selected'; ?>>BTech</option>
                     <option value="Other" <?php if ($degree === 'Other') echo 'selected'; ?>>Other</option>
                 </select>
                 <span class="invalid-feedback"><?php echo $degree_err; ?></span>
@@ -575,7 +597,9 @@ if (empty($transaction_number)) {
 
             <div class="form-group">
                 <label>YEAR OF STUDY</label>
-                <select name="year" class="form-control <?php echo (!empty($year_err)) ? 'is-invalid' : ''; ?>">
+                <select name="year" required 
+                oninvalid="this.setCustomValidity('Select your year of study')"
+                oninput="this.setCustomValidity('')"class="form-control <?php echo (!empty($year_err)) ? 'is-invalid' : ''; ?>">
                     <option value="" selected disabled>Select Year</option>
                     <option value="1" <?php echo ($year == "1") ? "selected" : ""; ?>>1</option>
                     <option value="2" <?php echo ($year == "2") ? "selected" : ""; ?>>2</option>
@@ -588,11 +612,23 @@ if (empty($transaction_number)) {
 
             <div class="form-group">
                 <label>COLLEGE NAME</label>
-                <select type="text" name="college" id="college" class="form-control <?php echo (!empty($college_err)) ? 'is-invalid' : ''; ?>">
-                    <option value="" selected disabled>Select your college</option>
+                <select type="text" name="college" required 
+                oninvalid="this.setCustomValidity('Select your college')"
+                oninput="this.setCustomValidity('')" id="college" class="form-control <?php echo (!empty($college_err)) ? 'is-invalid' : ''; ?>">
+                    
+                <option value="" selected disabled>Select your college</option>
+                    <option value="Bannari Amman Institute of Technology, Sathy" <?php if ($college === 'Bannari Amman Institute of Technology, Sathy') echo 'selected'; ?>>Bannari Amman Institute of Technology, Sathy</option>
                     <option value="Coimbatore Institute Of Technology" <?php if ($college === 'Coimbatore Institute Of Technology') echo 'selected'; ?>>Coimbatore Institute Of Technology</option>
+                    <option value="Dr. NGP Institute Of Technology " <?php if ($college === 'Dr. NGP Institute Of Technology') echo 'selected'; ?>>Dr. NGP Institute Of Technology</option>
+                    <option value="Hindusthan College of Arts and science" <?php if ($college === 'Hindusthan College of Arts and science') echo 'selected'; ?>>Hindusthan College of Arts and science</option>
+                    <option value="Knowledge Institute of Technology, Salem" <?php if ($college === 'Knowledge Institute of Technology, Salem') echo 'selected'; ?>>Knowledge Institute of Technology, Salem</option>
+                    <option value="Kongu Engineering College, Erode" <?php if ($college === 'Kongu Engineering College, Erode') echo 'selected'; ?>>Kongu Engineering College, Erode</option>
+                    <option value="Kumaraguru College of Technology, Coimbatore" <?php if ($college === 'Kumaraguru College of Technology, Coimbatore') echo 'selected'; ?>>Kumaraguru College of Technology, Coimbatore</option>
+                    <option value="Nallamuthu Gounder Mahalingam College, Pollachi" <?php if ($college === 'Nallamuthu Gounder Mahalingam College, Pollachi') echo 'selected'; ?>>Nallamuthu Gounder Mahalingam College, Pollachi</option>
                     <option value="PSG College of technology" <?php if ($college === 'PSG College of technology') echo 'selected'; ?>>PSG College of technology</option>
                     <option value="PSG College of arts and science" <?php if ($college === 'PSG College of arts and science') echo 'selected'; ?>>PSG College of arts and science</option>
+                    <option value="SNS College of Technology, Coimbatore" <?php if ($college === 'SNS College of Technology, Coimbatore') echo 'selected'; ?>>SNS College of Technology, Coimbatore</option>
+                    <option value="Sri Krishna College Of Technology, Coimbatore" <?php if ($college === 'Sri Krishna College Of Technology, Coimbatore') echo 'selected'; ?>>Sri Krishna College Of Technology, Coimbatore</option>
                     <option value="Other" <?php if ($college === 'Other') echo 'selected'; ?>>Other</option>
                 </select>
                 <span class="invalid-feedback"><?php echo $college_err; ?></span>
@@ -605,7 +641,9 @@ if (empty($transaction_number)) {
 
             <div class="form-group">
                 <label>GENDER</label>
-                <select name="gender" class="form-control <?php echo (!empty($gender_err)) ? 'is-invalid' : ''; ?>">
+                <select name="gender" required 
+                oninvalid="this.setCustomValidity('Select your gender')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($gender_err)) ? 'is-invalid' : ''; ?>">
                     <option value="" selected disabled>Select your gender</option>
                     <option value="Male" <?php if ($gender === 'Male') echo 'selected'; ?>>Male</option>
                     <option value="Female" <?php if ($gender === 'Female') echo 'selected'; ?>>Female</option>
@@ -615,7 +653,9 @@ if (empty($transaction_number)) {
 
             <div class="form-group">
                 <label>FOOD PREFERENCE</label>
-                <select name="food_preference" class="form-control <?php echo (!empty($food_preference_err)) ? 'is-invalid' : ''; ?>">
+                <select name="food_preference" required 
+                oninvalid="this.setCustomValidity('Select your food preference')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($food_preference_err)) ? 'is-invalid' : ''; ?>">
                     <option value="" selected disabled>Select your food preference</option>
                     <option value="Veg" <?php if ($food_preference === 'Veg') echo 'selected'; ?>>Vegetarian (Veg)</option>
                     <option value="NonVeg" <?php if ($food_preference === 'NonVeg') echo 'selected'; ?>>Non-Vegetarian (Non-Veg)</option>
@@ -630,13 +670,17 @@ if (empty($transaction_number)) {
 
             <div class="form-group">
                 <label>TRANSACTION NUMBER</label>
-                <input type="text" name="transaction_number" class="form-control <?php echo (!empty($transaction_number_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $transaction_number; ?>">
+                <input type="text" name="transaction_number"  required 
+                oninvalid="this.setCustomValidity('Enter your transaction number')"
+                oninput="this.setCustomValidity('')"  class="form-control <?php echo (!empty($transaction_number_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $transaction_number; ?>">
                 <span class="invalid-feedback"><?php echo $transaction_number_err; ?></span>
             </div> &nbsp;&nbsp;
 
             <div class="form-group">
                 <label>PAYMENT RECEIPT</label>
-                <input type="file" name="image" class="form-control <?php echo (!empty($image_err)) ? 'is-invalid' : ''; ?>">
+                <input type="file" name="image"  required 
+                oninvalid="this.setCustomValidity('Attach your payment receipt')"
+                oninput="this.setCustomValidity('')" class="form-control <?php echo (!empty($image_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><br><?php echo $image_err; ?></span>
             </div><br>&nbsp;&nbsp;
 
@@ -647,6 +691,14 @@ if (empty($transaction_number)) {
 
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
+        <ul>
+        <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
+            <li> <b>Sankar Guru - </li>
+            <li> Keerthana - </li>
+            <li> Pepitha sri - </b></li>
+        </ul>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
     </div>
     </div>
     </div>
@@ -699,6 +751,9 @@ if (empty($transaction_number)) {
         // Remove non-numeric characters from the input
         this.value = this.value.replace(/\D/g, '');
     });
+    oninput="setCustomValidity('')"
+
+    
 </script>
 
 

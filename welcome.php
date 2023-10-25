@@ -99,8 +99,39 @@
             IT OFFERS A PLATFORM FOR UNDERGRADUATE AND POSTGRADUATE STUDENTS, SPANNING ACROSS DIVERSE EDUCATIONAL BACKGROUNDS, TO PARTICIPATE AND ENGAGE IN HEALTHY COMPETITION.
             THIS DYNAMIC, ONE-DAY SYMPOSIUM IS A RICH FUSION OF VARIOUS THOUGHT-PROVOKING EVENTS AND ACTIVITIES.
             JOIN US FOR A SERIES OF TECHNICAL SUBEVENTS THAT WILL CHALLENGE AND INSPIRE YOU IN THE WORLD OF TECHNOLOGY.</p>
-        </section>  
-        <br><br><br><br>
+        </section>  <br><br>
+
+        <div class="instruction">
+        <hr style="height:2px;border-width:0;color:white;background-color:white">   
+        <h2> INSTRUCTIONS FOR REGISTRATION</h2><br>
+        <table>
+        <h5> REGISTRATION</h5>
+        <ul>
+            <li> Clicking "Register" button under the event description will directly register you to the event.</li>
+            <li> Once registered for the event you cannot unregister yourself from the event. </li>
+        </ul>
+        <h5> CATEGORIZATION </h5>
+        <ul>
+            <li>In offline events there are 3 categories, In the first two categories there are two events. You can only register any one in the first two categories.</li>
+            <li><b>For ex:</b> You can either register for Quantum Quest or Fun Forum in the category 1 and you can either register for logic lore or maze runners in category 2.</li>
+            <li> For the FUN FORUM event only 120 members are allowed and the registration for the  event is closed once the registrations are full. </li>
+        </ul>  
+        <h5> PROFILE </h5>
+        <ul>
+            <li> You can check on your registered events in your profile. </li>
+            <li> You can also check your registered mobile number and email id. </li>
+        </ul>
+            <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
+            <li> <b>Sankar Guru - </li>
+            <li> Keerthana - </li>
+            <li> Pepitha sri - </b></li>
+
+        </table>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
+
+        </div>
+
+        <br><br>
 
     <section id="section3" class="section">
         <form method="post">
@@ -167,20 +198,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 }
 ?>
 
-        <h2 style="text-align:center">EVENTS</h2><br>
-        <h3 style="text-align:center; color:#FF7676">OFFLINE EVENTS</h3>
+            <h2 style="text-align:center">EVENTS</h2><br>
+            <h3 style="text-align:center; color:#FF7676">OFFLINE EVENTS</h3>
                 <div class="subevents-container">
      
                     <!-- Category 1: -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp; Category 1</h3>
+                    <h3> &nbsp; &nbsp; &nbsp; CATEGORY 1</h3>
                     <div class="category">
                         <br>
                         <div class="subevent-details" data-event-id="1" onclick="openPopup('event1')">
                             <h2>QUANTUM QUEST</h2>
                             <div class="logoimg">
-                                <img src="QQ.png" alt="logo" style="width:100%">
-                            </div><br>
+                                <img src="QQ1.png" alt="logo" style="width:110%">
+                            </div>
                             <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.</p>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;    
@@ -197,21 +228,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
                     <!-- Category 2: -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp;  Category 2</h3>
+                    <h3> &nbsp; &nbsp; &nbsp;  CATEGORY 2</h3>
                     <div class="category">
                         <div class="subevent-details" data-event-id="3" onclick="openPopup('event3')">
                             <h2>LOGIC LORE</h2>
                             <div class="logoimg">
-                                <img src="LL.jpg" alt="logo" style="width:50%">
-                            </div><br>
+                                <img src="LL1.png" alt="logo" style="width:110%">
+                            </div>
                             <p>The canvas of code awaits your artistry</p>
                         </div>
                         &nbsp;&nbsp; &nbsp; &nbsp; 
 
                         <div class="subevent-details"  data-event-id="4" onclick="openPopup('event4')">
-                            <h2>Maze Runners</h2>
+                            <h2>MAZE RUNNERS</h2>
                             <div class="logoimg">
-                                <img src="MR.png" alt="logo" style="width:100%">
+                                <img src="MR1.png" alt="logo" style="width:110%">
                             </div>
                             <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
                         </div>
@@ -220,35 +251,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
                     <!-- Category 3:  -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp; Category 3</h3>
+                    <h3> &nbsp; &nbsp; &nbsp; CATEGORY 3</h3>
                     <div class="category">
                         <div class="subevent-details" data-event-id="6" onclick="openPopup('event5')">
-                            <h2>Idea Launch</h2>
+                            <h2>IDEA LAUNCH</h2>
                             <div class="logoimg">
-                                <img src="ILL.png" alt="logo" style="width:90%">
+                                <img src="IL.png" alt="logo" style="width:110%">
                             </div>
                             <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
                         </div>
                     </div><br>
                     </div>
                 </div>
-                
-                <h3 style="text-align:center; color:#FF7676"> ONLINE EVENTS </h3>
+
+
+                 <!-- Online event:  -->
+                <h3 style="text-align:center; color:#FF7676"> ONLINE EVENT </h3> 
                 <div class="subevents-container">
-                
-                    <!-- Category 4:  -->
-                    <div class="subevent-category"><br>
-                    <h3> &nbsp; &nbsp; &nbsp; Category 4</h3>
-                    <div class="category">
-                        <div class="subevent-details" data-event-id="5" onclick="openPopup('event6')">
-                            <h2>SHUTTER SPECTRUM</h2>
-                            <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
-                            </div>
-                            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
-                        </div><br>
-                    </div><br>
-                    <h3> &nbsp; &nbsp; &nbsp; Category 5 </h3>
+             
+                    <div class="subevent-category">
                     <div class="category">
                         <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
                             <h2>STICKEEZ MATE</h2>
@@ -258,6 +279,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                             <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
                         </div>
                     </div>
+                    </div>
+                </div>
+
+                  <!-- Hybrid event:  -->
+                    <h3 style="text-align:center; color:#FF7676"> HYBRID EVENT </h3>
+                    
+                    <div class="subevents-container">
+                    
+                    <div class="subevent-category">
+                    <div class="category">
+                        <div class="subevent-details" data-event-id="5" onclick="openPopup('event6')">
+                            <h2>SHUTTER SPECTRUM</h2>
+                            <div class="logoimg">
+                                <img src="SS.png" alt="logo" style="width:110%">
+                            </div>
+                            <p>Showcase your photography skills.</p>
+                        </div><br>
+                    </div><br>
                     </div>
                 </div>
 
@@ -384,7 +423,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event4')">&#10006;</span>
                 <h2>MAZE RUNNERS</h2><br>
-                <h4>DESCRIPTION:</h4>
+                <h4>DESCRIPTION</h4>
                 <p>
                 Get ready for Maze Runners to treasure like no other! Play the task with your smart minds and 
                 strategies for all levels and spot the finals.
@@ -408,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 <li> Emphasize the primary goal to win and enjoy the adventure.</li>
                 <li> Examine the game, and explore the treasury !</li><br>
                 </ul>
-                <h4>GENERAL RULES:</h4>
+                <h4>GENERAL RULES</h4>
                 <ul><li> Participants are need to follow the game rules and regulations reveal by the instructor.</li>
                 <li> Any form of cheating or against the rules ,will result in immediate disqualification.</li>
                 <li> Participants are required to maintain respectful and professional behavior throughout.
@@ -435,7 +474,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event5')">&#10006;</span>
                 <h2>IDEA LAUNCH</h2><br>
-                <h4>DESCRIPTION:   </h4>
+                <h4>DESCRIPTION   </h4>
                    <p> The objective of this event is to conduct a paper presentation . Each team can choose the topic from the given set of problem statements . Prototype has to be submitted in prior , the shortlisted team will present their ideas in front of juries.</p>
                    <h4><b>EVENT DETAILS</b></h4> 
                    <h5> TEAM SIZE  : 3 or 4 members </h5>
@@ -450,12 +489,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     8. The assumption made, strategies and problem modelling must be included in the solution.<br>
                     9. The team have first submitted the idea for the problem/abstract before one week prior to the final documentation. Then, submit the documentation before the last date for document submission.<br>
                     10. The selected team will come to college on the event date to present their document</ul></p>
-                    <h4> GENERAL RULES:   </h4><ul>
+                    <h4> GENERAL RULES  </h4><ul>
                     <li>	Any malpractice will not be tolerated and team will be disqualified.</li> 
                     <li>	The decision made by the panel cannot be overruled. </li></ul> 
                     </p>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
-                   <h4> EVENT COORDINATORS :  </h4>
+                   <h4> EVENT COORDINATORS   </h4>
                     <p>For any queries participants can contact the below listed committee member :  </p>
                     <ul>
                     <li>	Soundharya - </li>
@@ -474,9 +513,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         <div class="popup-overlay" id="event6-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event6')">&#10006;</span>
-                <h2>SHUTTER SPECTRUM</h2>
-                <p>Detailed description of event 6.</p>
-
+                <h2>SHUTTER SPECTRUM</h2><br>
+                <h4><b>DESCRIPTION</b></h4>
+                <p>Calling all budding photographers and creative spirits! We are excited to welcome you to our
+                    photography contest.In this contest, you embark on a visual odyssey, where each frame is a
+                    new chapter, each 
+                </p>
+                <h4><b>EVENT DETAILS</b></h4>    
+                <h5>NO OF ROUNDS: 2 </h5> 
+                    <h5>TEAM SIZE: INDIVIDUAL</h5>
+                    <h5> ROUND 1:  </h5>
+                    <h5> CONTEST TYPE: ONLINE </h5><br>
+                    <ul><h5><b>CONTEST THEME : "SILHOUETTES IN NATURE"</b></h5><br>
+                    <li>Explore the dramatic and emotional impact of
+                    silhouettes against natural backgrounds, create mesmerizing silhouettes that
+                    bring to life the intricate shapes, vibrant colors, and the sheer poetry of the
+                    natural world. </li>
+                   <li> In the first round, the participant should submit two photographs relevant
+                    to the theme,along with a brief description of each photograph. The
+                    shortlisted participants will advance to the next round,which will be held
+                    offline at CIT campus.</li>
+                    </ul>
+                    <h5> ROUND 2:  </h5>
+                    <h5> CONTEST TYPE: OFFLINE </h5><br>
+                    <ul><h5><b>Contest Theme: The theme for this round will be intimated to shortlisted participants.</b></h5><br>
+                        <li>This is the final round of the competition,where shortlisted participants
+                            will be given a theme on which they should create a short reel of about 30
+                            seconds within the CIT college premises.
+                        </li>
+                    </ul>
+                    <h4> GENERAL RULES  </h4>
+                    <ul>
+                    <li>Photographs must be original and related to the theme. </li>
+                    <li>Each participant should submit two photographs relevant to the theme.</li>
+                    <li> Editing is allowed and both Mobile and DSLR cameras are allowed.</li> 
+                    <li> Submission of offensive photos will lead to disqualification. </li>
+                    <li> Plagiarism analysis will be conducted and participants with fake photographs will be disqualified. </li> 
+                    <li> Format: High-resolution JPEG or PNG images.</li>
+                    <li> How to Submit: Upload your two photographs through google forms whose link will be provided to the participants through email/WhatsApp.</li>
+                    <li> A brief description of each photograph should be provided.</li> 
+                    <li> Judging Criteria: Creativity and Originality, Relevance to the Theme and adherence to the description of the photo.</li>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                    <h4>EVENT COORDINATORS</h4>
+                    <p>
+                        For any queries participants can contact the below listed committee members.
+                    </p>
+                    <ul>
+                    <li> Srinathi -   6379236604</li>
+                    <li>  Pratheesh - 6382115320 </li>
+                    <li>  Ragavan - 7530054251</li>
+                   <br>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
                 <button type="submit" name="register" value="SHUTTER SPECTRUM|Cat4" class="btn btn-primary">Register for SHUTTER SPECTRUM</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event6')">Cancel</button>
@@ -489,7 +578,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event7')">&#10006;</span>
                 <h2>STICKEEZ MATE</h2><br>
-                <h4><b>Description:</b> </h4>
+                <h4><b>DESCRIPTION</b> </h4>
                   <p>  Get ready for Stickeez a chess showdown like no other! The Elimination Round kicks off the action, 
                     where players go head-to-head, making every move count in a bid to secure a spot in the finals. It's all 
                     about survival of the smartest.
@@ -543,7 +632,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     games and win more points.</li></p>
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
-                    <h4>EVENT COORDINATORS:</h4><br>
+                    <h4>EVENT COORDINATORS</h4><br>
                     <p>
                         For any queries participants can contact the below listed committee members.
                     </p>

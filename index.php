@@ -69,6 +69,7 @@
                 </div><br><br>
             </div>
         </div>
+        
     </section>
     <div class="container">
         <section id="section2" class="scroll-section">
@@ -78,23 +79,55 @@
             IT OFFERS A PLATFORM FOR UNDERGRADUATE AND POSTGRADUATE STUDENTS, SPANNING ACROSS DIVERSE EDUCATIONAL BACKGROUNDS, TO PARTICIPATE AND ENGAGE IN HEALTHY COMPETITION.
             THIS DYNAMIC, ONE-DAY SYMPOSIUM IS A RICH FUSION OF VARIOUS THOUGHT-PROVOKING EVENTS AND ACTIVITIES.
             JOIN US FOR A SERIES OF TECHNICAL SUBEVENTS THAT WILL CHALLENGE AND INSPIRE YOU IN THE WORLD OF TECHNOLOGY.</i></p>
-        </section>  
-        <br><br><br><br>
+        </section>  <br><br>
+
+        <div class="instruction">
+        <hr style="height:2px;border-width:0;color:white;background-color:white">   
+        <h2> INSTRUCTIONS FOR REGISTRATION</h2><br>
+        <table>
+        <h5> REGISTRATION</h5>
+        <ul>
+            <li> User must create an Account inorder to register for event</li>
+            <li>Once the registration amount is paid User can register for 5 different Events</li>
+            <li> Clicking "Register" button under the event description will directly register you to the event.</li>
+            <li> Once registered for the event you cannot unregister yourself from the event. </li>
+        </ul>
+        <h5> CATEGORIZATION </h5>
+        <ul>
+            <li>In offline events there are 3 categories, In the first two categories there are two events. You can only register for one event from each categories.</li>
+            <li><b>For ex:</b> You can either register for Quantum Quest or Fun Forum in the category 1 and you can either register for logic lore or maze runners in category 2.</li>
+            <li> For the FUN FORUM event only 120 members are allowed and the registration for the  event is closed once the registrations are full. </li>
+        </ul> 
+        <h5> PROFILE </h5>
+        <ul>
+            <li> You can check  your registered events in your profile. </li>
+            <li> You can also check your registered mobile number and email id. </li>
+        </ul>
+            <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
+            <li> <b>Sankar Guru - </li>
+            <li> Keerthana - </li>
+            <li> Pepitha sri - </b></li>
+
+        </table>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
+
+        </div>
+        <br><br>
 
         <section id="section3" class="section">
         <h2 style="text-align:center">EVENTS</h2><br>
-        <h3 style="text-align:center; color:#FF7676">OFFLINE EVENTS</h3>
+            <h3 style="text-align:center; color:#FF7676">OFFLINE EVENTS</h3>
                 <div class="subevents-container">
      
-                   <!-- Category 1: -->
-                   <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp; Category 1</h3>
+                    <!-- Category 1: -->
+                    <div class="subevent-category">
+                    <h3> &nbsp; &nbsp; &nbsp; CATEGORY 1</h3>
                     <div class="category">
                         <br>
                         <div class="subevent-details" data-event-id="1" onclick="openPopup('event1')">
                             <h2>QUANTUM QUEST</h2>
                             <div class="logoimg">
-                                <img src="QQ.png" alt="logo" style="width:100%">
+                            <img src="QQ1.png" alt="logo" style="width:110%">
                             </div><br>
                             <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.</p>
                         </div>
@@ -112,21 +145,21 @@
 
                     <!-- Category 2: -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp;  Category 2</h3>
+                    <h3> &nbsp; &nbsp; &nbsp;  CATEGORY 2</h3>
                     <div class="category">
                         <div class="subevent-details" data-event-id="3" onclick="openPopup('event3')">
                             <h2>LOGIC LORE</h2>
                             <div class="logoimg">
-                                <img src="LL.jpg" alt="logo" style="width:50%">
+                            <img src="LL1.png" alt="logo" style="width:110%">
                             </div><br>
                             <p>The canvas of code awaits your artistry</p>
                         </div>
                         &nbsp;&nbsp; &nbsp; &nbsp; 
 
                         <div class="subevent-details"  data-event-id="4" onclick="openPopup('event4')">
-                            <h2>Maze Runners</h2>
+                            <h2>MAZE RUNNERS</h2>
                             <div class="logoimg">
-                                <img src="MR.png" alt="logo" style="width:100%">
+                            <img src="MR1.png" alt="logo" style="width:110%">
                             </div>
                             <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
                         </div>
@@ -135,48 +168,54 @@
 
                     <!-- Category 3:  -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp; Category 3</h3>
+                    <h3> &nbsp; &nbsp; &nbsp; CATEGORY 3</h3>
                     <div class="category">
                         <div class="subevent-details" data-event-id="6" onclick="openPopup('event5')">
-                            <h2>Idea Launch</h2>
+                            <h2>IDEA LAUNCH</h2>
                             <div class="logoimg">
-                                <img src="ILL.png" alt="logo" style="width:90%">
+                            <img src="IL.png" alt="logo" style="width:110%">
                             </div>
                             <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
                         </div>
                     </div><br>
                     </div>
                 </div>
-                <br>
-                <h3 style="text-align:center; color:#FF7676"> ONLINE EVENTS </h3>
+
+
+                 <!-- Online event:  -->
+                <h3 style="text-align:center; color:#FF7676"> ONLINE EVENT </h3> 
                 <div class="subevents-container">
-                
-                    <!-- Category 4:  -->
-                    <div class="subevent-category"><br>
-                    <h3> &nbsp; &nbsp; &nbsp; Category 4</h3>
-                    <div class="category">
-                        <div class="subevent-details" data-event-id="5" onclick="openPopup('event6')">
-                            <h2>SHUTTER SPECTRUM</h2>
-                            <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
+                    <div class="subevent-category">
+                        <div class="category">
+                            <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
+                                <h2>STICKEEZ MATE</h2>
+                                <div class="logoimg">
+                                    <img src="loading.jpg" alt="logo" style="width:50%">
+                                </div>
+                                <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
                             </div>
-                            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
-                        </div><br>
-                    </div><br>
-                    <h3> &nbsp; &nbsp; &nbsp; Category 5 </h3>
-                    <div class="category">
-                        <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
-                            <h2>STICKEEZ MATE</h2>
-                            <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
-                            </div>
-                            <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
                         </div>
-                    </div>
                     </div>
                 </div>
 
-    </div>
+                  <!-- Hybrid event:  -->
+                <h3 style="text-align:center; color:#FF7676"> HYBRID EVENT </h3>
+               
+                <div class="subevents-container">
+                   <div class="subevent-category">
+                        <div class="category">
+                            <div class="subevent-details" data-event-id="5" onclick="openPopup('event6')">
+                                <h2>SHUTTER SPECTRUM</h2>
+                                <div class="logoimg">
+                                <img src="SS.png" alt="logo" style="width:110%">
+                                </div>
+                                <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+                            </div><br>
+                        </div><br>
+                   </div>
+               </div>
+
+ 
     <div class="popup-overlay" id="event1-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event1')">&#10006;</span>
@@ -385,9 +424,59 @@
         <div class="popup-overlay" id="event6-popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup('event6')">&#10006;</span>
-                <h2>SHUTTER SPECTRUM</h2>
-                <p>Detailed description of event 6.</p>
-
+                <h2>SHUTTER SPECTRUM</h2><br>
+                <h4><b>DESCRIPTION</b></h4>
+                <p>Calling all budding photographers and creative spirits! We are excited to welcome you to our
+                    photography contest.In this contest, you embark on a visual odyssey, where each frame is a
+                    new chapter, each 
+                </p>
+                <h4><b>EVENT DETAILS</b></h4>    
+                <h5>NO OF ROUNDS: 2 </h5> 
+                    <h5>TEAM SIZE: INDIVIDUAL</h5>
+                    <h5> ROUND 1:  </h5>
+                    <h5> CONTEST TYPE: ONLINE </h5><br>
+                    <ul><h5><b>CONTEST THEME : "SILHOUETTES IN NATURE"</b></h5><br>
+                    <li>Explore the dramatic and emotional impact of
+                    silhouettes against natural backgrounds, create mesmerizing silhouettes that
+                    bring to life the intricate shapes, vibrant colors, and the sheer poetry of the
+                    natural world. </li>
+                   <li> In the first round, the participant should submit two photographs relevant
+                    to the theme,along with a brief description of each photograph. The
+                    shortlisted participants will advance to the next round,which will be held
+                    offline at CIT campus.</li>
+                    </ul>
+                    <h5> ROUND 2:  </h5>
+                    <h5> CONTEST TYPE: OFFLINE </h5><br>
+                    <ul><h5><b>Contest Theme: The theme for this round will be intimated to shortlisted participants.</b></h5><br>
+                        <li>This is the final round of the competition,where shortlisted participants
+                            will be given a theme on which they should create a short reel of about 30
+                            seconds within the CIT college premises.
+                        </li>
+                    </ul>
+                    <h4> GENERAL RULES  </h4>
+                    <ul>
+                    <li>Photographs must be original and related to the theme. </li>
+                    <li>Each participant should submit two photographs relevant to the theme.</li>
+                    <li> Editing is allowed and both Mobile and DSLR cameras are allowed.</li> 
+                    <li> Submission of offensive photos will lead to disqualification. </li>
+                    <li> Plagiarism analysis will be conducted and participants with fake photographs will be disqualified. </li> 
+                    <li> Format: High-resolution JPEG or PNG images.</li>
+                    <li> How to Submit: Upload your two photographs through google forms whose link will be provided to the participants through email/WhatsApp.</li>
+                    <li> A brief description of each photograph should be provided.</li> 
+                    <li> Judging Criteria: Creativity and Originality, Relevance to the Theme and adherence to the description of the photo.</li>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
+                    <h4>EVENT COORDINATORS</h4>
+                    <p>
+                        For any queries participants can contact the below listed committee members.
+                    </p>
+                    <ul>
+                    <li> Srinathi -   6379236604</li>
+                    <li>  Pratheesh - 6382115320 </li>
+                    <li>  Ragavan - 7530054251</li>
+                   <br>
+                    </ul>
+                    <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
                 <button type="submit" name="register" value="SHUTTER SPECTRUM|Cat4" class="btn btn-primary">Login to register for SHUTTER SPECTRUM</button>
                     </div>
