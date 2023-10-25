@@ -693,3 +693,13 @@ header {
 .instruction h5{
   color: #ce003e;
 }
+.perk {
+  border: 2px solid #ffffff; 
+  border-radius: 10px;
+  padding: 20px; 
+  margin: 20px 0; 
+}
+.perk h2{
+  text-align: center;
+  color: #e8d21d;
+}

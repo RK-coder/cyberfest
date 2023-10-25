@@ -19,9 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate username
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter a username.";
-    } elseif (!preg_match('/^[a-z0-9_]+$/', trim($_POST["username"]))) {
-        $username_err = "Username can only contain letters, numbers, and underscores.";
-    } else {
+    } elseif (strlen(trim($_POST["username"])) < 6) {
+        $username_err = "Username must be at least 6 characters long.";
+    } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
+        $username_err = "Username can only contain letters (both upper and lower case), numbers, and underscores.";
+    } else {    
         // Prepare a select statement
         $sql = "SELECT id FROM register WHERE username = ?";
 
@@ -51,11 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+
     // Validate password
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter a password.";
-    } elseif (strlen(trim($_POST["password"])) < 6) {
-        $password_err = "Password must have at least 6 characters.";
+    } elseif (strlen(trim($_POST["password"])) < 8) {
+        $password_err = "Password must have at least 8 characters.";
     } else {
         $password = trim($_POST["password"]);
     }
@@ -119,6 +122,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $year = trim($_POST["year"]);
     } else {
         $year_err = "Please enter your year.";
+    }
+
+    // Check if degree is BE or BTech and year is 1
+    if ($degree === "BE" || $degree === "BTech") {
+        if ($year === "1") {
+            $degree_err = "You are not eligible for this combination of degree and year.";
+        }
     }
 
     // Validate college
@@ -192,7 +202,7 @@ if (empty($transaction_number)) {
     if (empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err) && empty($reg_no_err) && empty($degree_err) && empty($stream_err) && empty($year_err) && empty($college_err) && empty($gender_err) && empty($food_preference_err) && empty($image_err)) {
 
         // Check if the college registration count is less than the maximum limit
-        $maxRegistrations = 5; // Set the maximum number of registrations per college
+        $maxRegistrations = 25; // Set the maximum number of registrations per college
 
         $sql = "SELECT COUNT(*) FROM register WHERE college = ?";
         $stmt = mysqli_prepare($link, $sql);

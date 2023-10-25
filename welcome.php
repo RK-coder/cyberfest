@@ -35,7 +35,7 @@
                     <li>   <a href="#section5">Contact</a></li>
                     <li>   <a href="#section6">Gallery</a></li>
                     <li>   <a href="reset-password.php" >Reset Password</a></li>
-                    <li>   <a href="profile.php" class="btn btn-warning">Profile</a></li>
+                    <li>   <a href="profile.php" class="btn btn-success">Profile</a></li>
                     <li>   <a href="logout.php" class="btn btn-danger ml-3">Sign Out</a></li>
                     </ul>
         </div>
@@ -46,7 +46,7 @@
             <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1><br>
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4>
             <h6> PROUDLY PRESENTs </h6><br>
-            <img src="logow.png" alt="logo">
+            <img src="logo.png" alt="logo">
             <h4>TECHODYSSEY : A JOURNEY THROUGH THE WORLD OF TECHNOLOGY</h4> <br>
         
             <div class="timer">
@@ -104,7 +104,7 @@
         <div class="instruction">
         <hr style="height:2px;border-width:0;color:white;background-color:white">   
         <h2> INSTRUCTIONS FOR REGISTRATION</h2><br>
-        <table>
+    
         <h5> REGISTRATION</h5>
         <ul>
             <li> Clicking "Register" button under the event description will directly register you to the event.</li>
@@ -122,15 +122,15 @@
             <li> You can also check your registered mobile number and email id. </li>
         </ul>
             <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
-            <li> <b>Sankar Guru - </li>
-            <li> Keerthana - </li>
-            <li> Pepitha sri - </b></li>
-
-        </table>
-        <hr style="height:2px;border-width:0;color:white;background-color:white">
-
+            <li> <b>Sankar Guru - 9626930715</li>
+            <li> Keerthana - 6374682651</li>
+            <li> Pepitha sri - 8680078973</b></li>
         </div>
-
+        <div class="perk">
+        <h2> PARTICIPANT PERKS </h2>
+        <P>As a token of appreciation for your participation in the symposium, we will be providing you with lunch, refreshments,  participation certificates, and complimentary gifts.We hope you enjoy the symposium and the benefits that come with being a participant. Thank you again for your attendance!</P>
+        </div>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
         <br><br>
 
     <section id="section3" class="section">
@@ -219,7 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                         <div class="subevent-details"  data-event-id="2" onclick="openPopup('event2')">
                             <h2>FUN FORUM</h2>
                             <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
+                                <img src="FF.png" alt="logo" style="width:110%">
                             </div><br>
                             <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
                         </div>
@@ -274,7 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                         <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
                             <h2>STICKEEZ MATE</h2>
                             <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
+                            <img src="SM.png" alt="logo" style="width:110%">
                             </div>
                             <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
                         </div>
@@ -357,7 +357,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">Register for QUANTUM QUEST</button>
+                <button type="submit" name="register" value="QUANTUM QUEST|CATEGORY 1" class="btn btn-primary" style="text-align:center">Register for QUANTUM QUEST</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event1')">Cancel</button>    
             </div>
             </div>
@@ -386,7 +386,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 </ul>
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                    <button type="submit" name="register" value="FUN FORUM|Cat1" class="btn btn-primary">Register for FUN FORUM</button>
+                    <button type="submit" name="register" value="FUN FORUM|CATEGORY 1" class="btn btn-primary">Register for FUN FORUM</button>
                     <button class="btn btn-danger ml-3" onclick="closePopup('event2')">Cancel</button>
                 </div>
             </div>
@@ -413,7 +413,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     </p>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="LOGIC LORE|Cat2" class="btn btn-primary">Register for LOGIC LORE</button>
+                <button type="submit" name="register" value="LOGIC LORE|CATEGORY 2" class="btn btn-primary">Register for LOGIC LORE</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event3')">Cancel</button>
                 </div>
             </div>
@@ -464,7 +464,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 </p>
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="MAZE RUNNERS|Cat2" class="btn btn-primary">Register for MAZE RUNNERS</button>
+                <button type="submit" name="register" value="MAZE RUNNERS|CATEGORY 2" class="btn btn-primary">Register for MAZE RUNNERS</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event4')">Cancel</button>
                 </div>
             </div>
@@ -504,7 +504,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="IDEA LAUNCH|Cat3" class="btn btn-primary">Register for IDEA LAUNCH</button>
+                <button type="submit" name="register" value="IDEA LAUNCH|CATEGORY 3" class="btn btn-primary">Register for IDEA LAUNCH</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event5')">Cancel</button>
             </div>
             </div>
@@ -567,7 +567,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
-                <button type="submit" name="register" value="SHUTTER SPECTRUM|Cat4" class="btn btn-primary">Register for SHUTTER SPECTRUM</button>
+                <button type="submit" name="register" value="SHUTTER SPECTRUM|CATEGORY 4" class="btn btn-primary">Register for SHUTTER SPECTRUM</button>
                 <button class="btn btn-danger ml-3" onclick="closePopup('event6')">Cancel</button>
         
             </div>
@@ -645,7 +645,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
               
-                    <button type="submit" name="register" value="STICKEEZ MATE|Cat5" class="btn btn-primary">Register for STICKEEZ MATE</button>
+                    <button type="submit" name="register" value="STICKEEZ MATE|CATEGORY 5" class="btn btn-primary">Register for STICKEEZ MATE</button>
                     <button class="btn btn-danger ml-3" onclick="closePopup('event7')">Cancel</button>
                     </div>
                 </div>
@@ -663,8 +663,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         <div class="contact">
         <h2 style="text-align: center;">CONTACT</h2>
             <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA==" class="fa fa-instagram"></a>
-            <a href="mailto:cyberfest2023@gmail.com"class="fa fa-envelope"></a>
-            <a href="tel:+91-7598596904"class="fa fa-phone"></a>
+            <a href="mailto:citcyberfest.ac.in@gmail.com"class="fa fa-envelope"></a>
+            <a href="tel:+91-8925317575"class="fa fa-phone"></a>
             <a href="https://www.linkedin.com/in/cit-cyberfest23/"class="fa fa-linkedin "></a>
         </div>
     </section>

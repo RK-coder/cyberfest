@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image" href="logow.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberFest</title>
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
@@ -54,8 +55,8 @@
             <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>  <br>
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4><br>
             <h6> PROUDLY PRESENTs </h6>  <br>
-            <img src="logow.png" alt="logo">
-            <h4><br>TECHODYSSEY : A JOURNEY THROUGH THE WORLD OF TECHNOLOGY</h4> <br>
+            <img src="logo.png" alt="logo">
+            <h4><br>A JOURNEY THROUGH THE WORLD OF TECHNOLOGY</h4> <br>
         
             <div class="timer">
                 <h2 id="headline">COUNTDOWN TO THE EVENT</h2>
@@ -84,7 +85,7 @@
         <div class="instruction">
         <hr style="height:2px;border-width:0;color:white;background-color:white">   
         <h2> INSTRUCTIONS FOR REGISTRATION</h2><br>
-        <table>
+  
         <h5> REGISTRATION</h5>
         <ul>
             <li> User must create an Account inorder to register for event</li>
@@ -104,14 +105,16 @@
             <li> You can also check your registered mobile number and email id. </li>
         </ul>
             <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
-            <li> <b>Sankar Guru - </li>
-            <li> Keerthana - </li>
-            <li> Pepitha sri - </b></li>
-
-        </table>
-        <hr style="height:2px;border-width:0;color:white;background-color:white">
-
+            <li> <b>Sankar Guru - 9626930715</li>
+            <li> Keerthana - 6374682651</li>
+            <li> Pepitha sri - 8680078973</b></li>
+        
         </div>
+        <div class="perk">
+        <h2> PARTICIPANT PERKS </h2>
+        <P>As a token of appreciation for your participation in the symposium, we will be providing you with lunch, refreshments,  participation certificates, and complimentary gifts.We hope you enjoy the symposium and the benefits that come with being a participant. Thank you again for your attendance!</P>
+        </div>
+        <hr style="height:2px;border-width:0;color:white;background-color:white">
         <br><br>
 
         <section id="section3" class="section">
@@ -136,7 +139,7 @@
                         <div class="subevent-details"  data-event-id="2" onclick="openPopup('event2')">
                             <h2>FUN FORUM</h2>
                             <div class="logoimg">
-                                <img src="loading.jpg" alt="logo" style="width:50%">
+                            <img src="FF.png" alt="logo" style="width:110%">
                             </div><br>
                             <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
                         </div>
@@ -190,7 +193,7 @@
                             <div class="subevent-details" data-event-id="7" onclick="openPopup('event7')">
                                 <h2>STICKEEZ MATE</h2>
                                 <div class="logoimg">
-                                    <img src="loading.jpg" alt="logo" style="width:50%">
+                                    <img src="SM.png" alt="logo" style="width:110%">
                                 </div>
                                 <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
                             </div>
@@ -569,8 +572,8 @@
         <div class="contact">
         <h2 style="text-align: center;">CONTACT</h2>
             <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA=="target="_blank" class="fa fa-instagram"></a>
-            <a href="mailto:cyberfest2023@gmail.com"target="_blank"class="fa fa-envelope"></a>
-            <a href="tel:+91-7598596904"class="fa fa-phone"></a>
+            <a href="mailto:citcyberfest.ac.in@gmail.com"target="_blank"class="fa fa-envelope"></a>
+            <a href="tel:+91-8925317575"class="fa fa-phone"></a>
             <a href="https://www.linkedin.com/in/cit-cyberfest23/"target="_blank"class="fa fa-linkedin "></a>
         </div>
     </section>
