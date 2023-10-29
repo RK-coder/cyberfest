@@ -106,6 +106,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate Degree
     if (isset($_POST["degree"])) {
         $degree = trim($_POST["degree"]);
+        if ($degree === "Other") {
+            // If "Other" is selected, check for a custom degree entry
+            if (isset($_POST["other_degree"])) {
+                $custom_degree = trim($_POST["other_degree"]);
+            }
+        } else {
+            // If a predefined degree is selected, store it in the "degree" column
+            $custom_degree = null; // Set to null if not "Other"
+        }
     } else {
         $degree_err = "Please select your degree.";
     }
@@ -134,9 +143,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate college
     if (isset($_POST["college"])) {
         $college = trim($_POST["college"]);
+        if ($college === "Other") {
+            // If "Other" is selected for college, check for a custom college entry
+            if (isset($_POST["other_college"])) {
+                $custom_college = trim($_POST["other_college"]);
+            }
+        } else {
+            // If a predefined college is selected, store it in the "college" column
+            $custom_college = null; // Set to null if not "Other"
+        }
     } else {
         $college_err = "Please select your college.";
     }
+      
 
     // Validate Gender
     if (isset($_POST["gender"])) {
@@ -184,26 +203,34 @@ if (empty($transaction_number)) {
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0) {
         $image_name = $_FILES["image"]["name"];
         $image_data = file_get_contents($_FILES["image"]["tmp_name"]);
-
-        // Check the file extension
-        $allowed_extensions = array("jpg", "jpeg", "png");
-        $file_extension = pathinfo($image_name, PATHINFO_EXTENSION);
-
-        if (!in_array(strtolower($file_extension), $allowed_extensions)) {
-            $image_err = "Only JPG, JPEG, and PNG files are allowed.";
+    
+        // Check the file size
+        $max_size = 2 * 1024 * 1024; // 2MB in bytes
+        if ($_FILES["image"]["size"] > $max_size) {
+            $image_err = "The uploaded image is too large. Please choose an image less than 2MB.";
         } else {
-            $image_format = $file_extension; // Store the image format
+            // Check the file extension
+            $allowed_extensions = array("jpg", "jpeg", "png");
+            $file_extension = pathinfo($image_name, PATHINFO_EXTENSION);
+    
+            if (!in_array(strtolower($file_extension), $allowed_extensions)) {
+                $image_err = "Only JPG, JPEG, and PNG files are allowed.";
+            } else {
+                $image_format = $file_extension; // Store the image format
+            }
         }
     } else {
         $image_err = "Please select an image file.";
     }
+    
 
     // Check input errors before inserting in the database
-    if (empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err) && empty($reg_no_err) && empty($degree_err) && empty($stream_err) && empty($year_err) && empty($college_err) && empty($gender_err) && empty($food_preference_err) && empty($image_err)) {
+    if (empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($phone_err) && empty($email_err) && empty($reg_no_err) && empty($degree_err) && empty($year_err) && empty($college_err) && empty($custom_college_err) && empty($gender_err) && empty($food_preference_err) && empty($image_err)) {
 
         // Check if the college registration count is less than the maximum limit
-        $maxRegistrations = 25; // Set the maximum number of registrations per college
+        $maxRegistrations = 3; // Set the maximum number of registrations per college
 
+        if ($college !== "Other") {
         $sql = "SELECT COUNT(*) FROM register WHERE college = ?";
         $stmt = mysqli_prepare($link, $sql);
         mysqli_stmt_bind_param($stmt, "s", $college);
@@ -214,11 +241,11 @@ if (empty($transaction_number)) {
 
         if ($registrationCount < $maxRegistrations) {
             // Prepare an insert statement
-            $sql = "INSERT INTO register (name, username, password, confirm_password, phone, email, reg_no, degree, stream, year, college, gender, food_preference, transaction_number, image_name, image_data, image_format) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+            $sql = "INSERT INTO register (name, username, password, confirm_password, phone, email, reg_no, degree, custom_degree, stream, year, college, custom_college, gender, food_preference, transaction_number, image_name, image_data, image_format) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 
             if ($stmt = mysqli_prepare($link, $sql)) {
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sssssssssssssssss", $param_name, $param_username, $param_password, $param_confirm_password, $param_phone, $param_email, $param_reg_no, $param_degree, $param_stream, $param_year, $param_college, $param_gender, $param_food_preference, $param_transaction_number, $param_image_name, $param_image_data, $param_image_format);
+                mysqli_stmt_bind_param($stmt, "sssssssssssssssssss", $param_name, $param_username, $param_password, $param_confirm_password, $param_phone, $param_email, $param_reg_no, $param_degree, $param_custom_degree, $param_stream, $param_year, $param_college,  $param_custom_college, $param_gender, $param_food_preference, $param_transaction_number, $param_image_name, $param_image_data, $param_image_format);
 
                 // Set parameters
                 $param_name = $name;
@@ -229,9 +256,11 @@ if (empty($transaction_number)) {
                 $param_email = $email;
                 $param_reg_no = $reg_no;
                 $param_degree = $degree;
+                $param_custom_degree = $custom_degree;
                 $param_stream = $stream;
                 $param_year = $year;
                 $param_college = $college;
+                $param_custom_college = $custom_college;
                 $param_gender = $gender;
                 $param_food_preference = $food_preference;
                 $param_transaction_number = $transaction_number;
@@ -263,6 +292,49 @@ if (empty($transaction_number)) {
             echo '<script>alert("Registration for this college is full. Please choose another college.");</script>';
         }
 
+    } else {
+        // If college is "Other", handle it as a special case without considering registration count
+        // Prepare an insert statement
+        $sql = "INSERT INTO register (name, username, password, confirm_password, phone, email, reg_no, degree, custom_degree, stream, year, college, custom_college, gender, food_preference, transaction_number, image_name, image_data, image_format) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "sssssssssssssssssss", $param_name, $param_username, $param_password, $param_confirm_password, $param_phone, $param_email, $param_reg_no, $param_degree, $param_custom_degree, $param_stream, $param_year, $param_college, $param_custom_college, $param_gender, $param_food_preference, $param_transaction_number, $param_image_name, $param_image_data, $param_image_format);
+
+            // Set parameters
+            $param_name = $name;
+            $param_username = $username;
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            $param_confirm_password = $confirm_password;
+            $param_phone = $phone;
+            $param_email = $email;
+            $param_reg_no = $reg_no;
+            $param_degree = $degree;
+            $param_custom_degree = $custom_degree;
+            $param_stream = $stream;
+            $param_year = $year;
+            $param_college = $college;
+            $param_custom_college = $custom_college;
+            $param_gender = $gender;
+            $param_food_preference = $food_preference;
+            $param_transaction_number = $transaction_number;
+            $param_image_name = $image_name;
+            $param_image_data = $image_data;
+            $param_image_format = $image_format;
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                // Redirect to login page
+                echo '<script>alert("Registration successful. You can now log in.");';
+                echo 'window.location.href = "login.php";</script>';
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
         // Close the database connection
         mysqli_close($link);
     }
@@ -593,9 +665,9 @@ if (empty($transaction_number)) {
                 <span class="invalid-feedback"><?php echo $degree_err; ?></span>
             </div>
 
-            <div class="form-group" id="otherDegreeField" style="display: none;">
+            <div class="form-group" id="otherDegreeField" >
                 <label>OTHER </label>
-                <input type="text" name="other_degree" class="form-control">
+                <input type="text" name="other_degree" class="form-control" required>
             </div>&nbsp;
 
 
@@ -646,8 +718,9 @@ if (empty($transaction_number)) {
 
             <div class="form-group" id="otherCollegeField" style="display: none;">
                 <label>OTHER </label>
-                <input type="text" name="other_college" class="form-control">
-            </div>&nbsp;&nbsp;
+                <input type="text" name="other_college" class="form-control" required>
+            </div>
+            &nbsp;&nbsp;
 
             <div class="form-group">
                 <label>GENDER</label>

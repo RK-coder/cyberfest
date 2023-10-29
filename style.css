@@ -178,7 +178,7 @@ header {
 @media all and (max-width: 450px) {
   .heading img{
     width: 300px;
-    height: 100px;
+    height: 150px;
   }
 } 
 
@@ -221,15 +221,12 @@ header {
 }
 
 .subevent-details {
-    width: 300px; /*calc(30% - 20px);*/
-    height: 300px; /* Set the height for each box */
-    /* background-color: #F9F9F9;
-    background-image: linear-gradient(to right, rgb(58, 43, 198), rgb(80, 146, 212));*/
+    width: 300px;
+    height: 300px; 
     background-image: url(futur.jpg);
     background-size: cover;
     padding: 1rem;
     border-radius: 10px;
-    /* border: 1px solid #E0E0E0; */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     box-sizing: border-box;
@@ -281,7 +278,8 @@ header {
     }
 }
 
-@media all and (max-width: 650px) and (min-width: 449px) {
+/* @media all and (max-width: 650px) and (min-width: 449px) { */
+  @media all and (max-width: 650px) {
     .subevent-details {
         width: 300px;
         height: 300px;
@@ -326,8 +324,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #000000;
-   background-image: linear-gradient(to bottom left, rgb(254, 1, 142), rgb(8, 3, 77) , rgb(8, 3, 77) , rgb(8, 3, 77)); 
-  /* background-image: linear-gradient(to top right, rgb(19, 41, 242), rgb(187, 16, 187), rgb(19, 41, 242) ); */
+  background-image: linear-gradient(to bottom left, rgb(254, 1, 142), rgb(8, 3, 77) , rgb(8, 3, 77) , rgb(8, 3, 77)); 
   padding: 40px;
   margin-top: 40px;
   border-radius: 5px;
@@ -558,7 +555,7 @@ header {
 .scroll-section {
   opacity: 0;
   transform: translateY(-20px); /* Change to translateY for vertical movement */
-  transition: opacity 1s, transform 3s;
+  transition: opacity 1ms, transform 3s;
 }
 
 .scroll-section.animate-section {

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <link rel="icon" type="image" href="logow.png">
+    <link rel="icon" type="image" href="title.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberFest</title>
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
@@ -275,8 +276,8 @@
                
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">Login to register for QUANTUM QUEST</button>
-                </div>
+                <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">Login to register for QUANTUM QUEST</button>  
+            </div>
             </div>
         </div>
 
@@ -575,6 +576,7 @@
             <a href="mailto:citcyberfest.ac.in@gmail.com"target="_blank"class="fa fa-envelope"></a>
             <a href="tel:+91-8925317575"class="fa fa-phone"></a>
             <a href="https://www.linkedin.com/in/cit-cyberfest23/"target="_blank"class="fa fa-linkedin "></a>
+            
         </div>
     </section>
 
