@@ -222,8 +222,7 @@ if (empty($transaction_number)) {
     } else {
         $image_err = "Please select an image file.";
     }
-    
-
+   
     // Check input errors before inserting in the database
     if (empty($name_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($phone_err) && empty($email_err) && empty($reg_no_err) && empty($degree_err) && empty($year_err) && empty($college_err) && empty($custom_college_err) && empty($gender_err) && empty($food_preference_err) && empty($image_err)) {
 
@@ -305,7 +304,7 @@ if (empty($transaction_number)) {
             $param_name = $name;
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_confirm_password = $confirm_password;
+            $param_confirm_password = ($confirm_password);
             $param_phone = $phone;
             $param_email = $email;
             $param_reg_no = $reg_no;
@@ -667,7 +666,7 @@ if (empty($transaction_number)) {
 
             <div class="form-group" id="otherDegreeField" >
                 <label>OTHER </label>
-                <input type="text" name="other_degree" class="form-control" required>
+                <input type="text" name="other_degree" class="form-control">
             </div>&nbsp;
 
 
@@ -718,7 +717,7 @@ if (empty($transaction_number)) {
 
             <div class="form-group" id="otherCollegeField" style="display: none;">
                 <label>OTHER </label>
-                <input type="text" name="other_college" class="form-control" required>
+                <input type="text" name="other_college" class="form-control">
             </div>
             &nbsp;&nbsp;
 
@@ -776,10 +775,8 @@ if (empty($transaction_number)) {
         </form>
         <hr style="height:2px;border-width:0;color:white;background-color:white">
         <ul>
-        <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
-            <li> <b>Sankar Guru - </li>
-            <li> Keerthana - </li>
-            <li> Pepitha sri - </b></li>
+        <p><b>For any queries related to registration participants can contact.</b></p>
+            <li><b> Rishi kumar N - 7598596904</b> </li>
         </ul>
         <hr style="height:2px;border-width:0;color:white;background-color:white">
     </div>
@@ -835,9 +832,5 @@ if (empty($transaction_number)) {
         this.value = this.value.replace(/\D/g, '');
     });
     oninput="setCustomValidity('')"
-
-    
 </script>
-
-
 </html>

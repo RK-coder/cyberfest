@@ -22,7 +22,8 @@
         <div class="top-nav">
             <div>
             <h4><img src="CIT logo.png" alt="logo" style="width: 40px">
-            COIMBATORE INSTITUTE OF TECHNOLOGY</h4>  
+            COIMBATORE INSTITUTE OF TECHNOLOGY
+            <img src="cman.png" alt="logo" style="width: 40px"></h4>  
             </div>  
                 <input id="menu-toggle" type="checkbox" />
                 <label class='menu-button-container' for="menu-toggle">
@@ -32,13 +33,41 @@
                     <li>   <a href="#section1">Home</a></li>
                     <li>   <a href="#section2">About</a></li>
                     <li>   <a href="#section3">Events</a></li>
-                    <li>   <a href="#section4">Sponsors</a></li>
+                    <!-- <li>   <a href="#section4">Sponsors</a></li> -->
                     <li>   <a href="#section5">Contact</a></li>
-                    <li>   <a href="#section6">Gallery</a></li>
                     <li>   <a href="reset-password.php" >Reset Password</a></li>
                     <li>   <a href="profile.php" class="btn btn-success">Profile</a></li>
                     <li>   <a href="logout.php" class="btn btn-danger ml-3">Sign Out</a></li>
                     </ul>
+        </div>
+        <div class="welcome" style="text-align: right;">
+        <?php
+        // Initialize the session
+            session_start();
+        // Check if the user is logged in, if not then redirect him to login page
+            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+                header("location: login.php");
+                exit;
+            }
+            if (isset($_SESSION["id"])) {
+                // Assuming you have a database connection established
+                require_once 'db.php';
+            
+                // Fetch the user's name from the database
+                $user_id = $_SESSION["id"];
+                $stmt = $link->prepare("SELECT name FROM register WHERE id = ?");
+                $stmt->bind_param("i", $user_id);
+                $stmt->execute();
+                $stmt->bind_result($user_name);
+            
+                if ($stmt->fetch()) {
+                    // Display a welcome message with the user's name
+                    echo '<h6>Hey, <b>' . htmlspecialchars($user_name) . '</b> ! Welcome.</h6>';
+                }
+            
+                $stmt->close();
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        ?>
         </div>
     </header>
     
@@ -63,36 +92,7 @@
             </div>
         </div>
     </section>
-        <div class="container">
-        <?php
-        // Initialize the session
-            session_start();
-        // Check if the user is logged in, if not then redirect him to login page
-            if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-                header("location: login.php");
-                exit;
-            }
-            if (isset($_SESSION["id"])) {
-                // Assuming you have a database connection established
-                require_once 'db.php';
-            
-                // Fetch the user's name from the database
-                $user_id = $_SESSION["id"];
-                $stmt = $link->prepare("SELECT name FROM register WHERE id = ?");
-                $stmt->bind_param("i", $user_id);
-                $stmt->execute();
-                $stmt->bind_result($user_name);
-            
-                if ($stmt->fetch()) {
-                    // Display a welcome message with the user's name
-                    echo '<h6>Hey, <b>' . htmlspecialchars($user_name) . '</b>. Welcome to CYBERFEST 2K23.</h6>';
-                }
-            
-                $stmt->close();
-            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-        ?>
-      
-      
+        <div class="container">   
         <section id="section2" class="scroll-section"><br><br>
         <h2 style="text-align:center">ABOUT CYBERFEST 2K23</h2><br>
         <p>CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY.
@@ -116,7 +116,11 @@
             <li>In offline events there are 3 categories, In the first two categories there are two events. You can only register any one in the first two categories.</li>
             <li><b>For ex:</b> You can either register for Quantum Quest or Fun Forum in the category 1 and you can either register for logic lore or maze runners in category 2.</li>
             <li> For the FUN FORUM event only 120 members are allowed and the registration for the  event is closed once the registrations are full. </li>
-        </ul>  
+        </ul> 
+        <h5> ELIGIBILITY </h5>
+        <ul>
+            <li>All UnderGraduate and PostGraduate College students except Undergraduate 1st years are eligibile to participate.</li>
+        </ul> 
         <h5> PROFILE </h5>
         <ul>
             <li> You can check on your registered events in your profile. </li>
@@ -129,7 +133,7 @@
         </div>
         <div class="perk">
         <h2> PARTICIPANT PERKS </h2>
-        <P>As a token of appreciation for your participation in the symposium, we will be providing you with lunch, refreshments,  participation certificates, and complimentary gifts.We hope you enjoy the symposium and the benefits that come with being a participant. Thank you again for your attendance!</P>
+        <P>As a token of appreciation for your participation in the symposium, we will be providing you with lunch, refreshments,  participation certificates, and complimentary gifts.We hope you enjoy the symposium and the benefits that come with being a participant. Thank you again for your attendance !</P>
         </div>
         <hr style="height:2px;border-width:0;color:white;background-color:white">
         <br><br>
@@ -213,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                             <div class="logoimg">
                                 <img src="QQ1.png" alt="logo" style="width:110%">
                             </div>
-                            <p>Put your coding skills to the test and develop innovative solutions in a time-bound challenge.</p>
+                            <p>Quiz your way to coding glory!</p>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;    
                     
@@ -221,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                             <h2>FUN FORUM</h2>
                             <div class="logoimg">
                                 <img src="FF.png" alt="logo" style="width:110%">
-                            </div><br>
+                            </div>
                             <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
                         </div>
                     </div>
@@ -259,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                             <div class="logoimg">
                                 <img src="IL.png" alt="logo" style="width:110%">
                             </div>
-                            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+                            <p>From Concept to Reality, From Vision to Impact:Launch Your Innovation at Idea Launch</p>
                         </div>
                     </div><br>
                     </div>
@@ -359,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
                 <button type="submit" name="register" value="QUANTUM QUEST|CATEGORY 1" class="btn btn-primary" style="text-align:center">Register for QUANTUM QUEST</button>
-                <button class="btn btn-danger ml-3" onclick="closePopup('event1')">Cancel</button>    
+                <button type="button" class="btn btn-danger ml-3" onclick="closePopup('event1')">Cancel</button>    
             </div>
             </div>
         </div>
@@ -385,6 +389,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 <li>	Be clear about how points are scored, and how a winner or winning team is determined. Consider tie-breaker rules if necessary and that team will be rematch.</li>
                 <li>	Most importantly, remind everyone that the primary goal is to have fun. Games and fun events are meant for enjoyment and relaxation, so keep the atmosphere light and enjoyable.</li>
                 </ul>
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+                <h4>EVENT COORDINATORS:</h4> 
+                <p>
+                    For any queries participants can contact the below listed committee members.
+                </p>
+                    <ul>
+                    <li>	ARUN KUMAR  S   - 733952244</li>
+                    <li>	SHEEHAL  NISHIBA J   - 9488886032</li>
+                    <li>	JAYARRAKESH PRABAKAR S - 9385528415</li>
+                    <li>	SOMASUNDARAM S--7010905731</li>
+                    </ul>
+               
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
                     <button type="submit" name="register" value="FUN FORUM|CATEGORY 1" class="btn btn-primary">Register for FUN FORUM</button>
@@ -459,7 +475,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                <ul> 
                <li> Syed Abdul Rahman S - 7092550028</li>
                 <li> Oviya C - 8778653548</li>
-                <li> Kanna B.S - 8608744936</li>
                 <li> Viswa - 6374353499</li>
                </ul>
                 </p>
@@ -480,28 +495,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                    <h4><b>EVENT DETAILS</b></h4> 
                    <h5> TEAM SIZE  : 3 or 4 members </h5>
                     <h4> EVENT RULES : </h4><ul>
-                     1. Each team would comprise of 3 or 4 members including the team leader.<br>
-                    2. As the software edition of the hackathon is digital product development competition, majority of the team members must be well versed with programming skills.<br>
-                    3. Team members should work up to prototype design to the given problem statement.<br>
-                    4. All team members should be from same college; no inter-college teams are allowed. However, members from different branches of the same college/ institute are encouraged to form a team.<br>
-                    5. The teams have entire freedom to use any programming language or web-designing or any framework for the development of their project.<br>
-                    6. In case of similar project between two or more teams - the earliest submission will be considered.<br>
-                    7. Submission with more than 20% plagiarism will be rejected.<br>
-                    8. The assumption made, strategies and problem modelling must be included in the solution.<br>
-                    9. The team have first submitted the idea for the problem/abstract before one week prior to the final documentation. Then, submit the documentation before the last date for document submission.<br>
-                    10. The selected team will come to college on the event date to present their document</ul></p>
+                    1.	Teams must consist of 3 or 4 members, including the team leader.<br>
+                    2.All team members must be from the same college; inter-college teams are not permitted. However, teams can include members from different branches of the same college or institute.<br>
+                    3.	Proficiency in programming skills is highly advantageous since the Hackathon's software edition focuses on digital product development.<br>
+                    4.Teams have the flexibility to choose a problem statement from the provided domains.<br>
+                    5. Teams can use any programming language, web-designing, or framework for their project development.<br>
+                    6.Team members should work on designing a prototype for the chosen problem statement.<br>
+                    7. Teams must submit an abstract of their idea one week before the final documentation deadline. The final documentation should be submitted on or before the specified last date.<br>
+                    8. In case of similar projects by two or more teams, the earliest submission will be considered.<br>
+                    9. Solutions should include assumptions, strategies, and problem modelling.<br>
+                    10.	Submissions with more than 20% plagiarism will be rejected.<br>
+                    11.	Selected teams will present their documents on the event date at the college.<br>
+                    12.	The document must contain the following contents: 
+                     <ul>  <li>	Problem definition </li>
+                        <li>	The social impact of problem defined</li>
+                        <li>	Requirement Analysis(Hardware, Software, functional, Non functional) </li>
+                        <li>	The use cases </li>
+                        <li>	Design with all applicable diagrams Ex: (Architecture, Class, Sequence, Activity, ER, etc)</li>
+                        <li>	Input Output Screens</li>
+                        <li>	Conclusion</li></ul>
+                </ul>
+                </p>
                     <h4> GENERAL RULES  </h4><ul>
-                    <li>	Any malpractice will not be tolerated and team will be disqualified.</li> 
-                    <li>	The decision made by the panel cannot be overruled. </li></ul> 
+                    <li>	Any form of malpractice will result in disqualification.  </li> 
+                    <li>	Decisions made by the panel are final and cannot be overruled. </li></ul> 
                     </p>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                    <h4> EVENT COORDINATORS   </h4>
                     <p>For any queries participants can contact the below listed committee member :  </p>
                     <ul>
-                    <li>	Soundharya - </li>
-                    <li>	Vignesh -</li>
-                    <li>	Ganga - </li>
-                    <li>	Kaja Mohyaddeen - </li>
+                    <li>	Soundharya -  6381591413 </li>
+                    <li>	Vignesh - 9345902954</li>
+                    <li>	Ganga - 7639837241</li>
+                    <li>	Kaja Mohyaddeen - 6381214184</li>
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
@@ -654,11 +680,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
         </form>
     </section>
-    <section id="section4" class="scroll-section"><br><br>
+
+    <!-- <section id="section4" class="scroll-section"><br><br>
     <div class="sponsor">
     <h2 style="text-align: center;">OUR SPONSORS</h2>
     </div>
-    </section>
+    </section> -->
 
     <section id="section5" class="scroll-section"><br>
         <div class="contact">
@@ -670,13 +697,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         </div>
     </section>
 
-    <section id="section6" class="scroll-section">
-        <div class="gallery">
-            <h2>Event Gallery</h2>
-            <img src="gallery/image1.jpg" alt="Event Photo">
-            <img src="gallery/image2.jpg" alt="Event Photo">
-        </div>
-    </section>
     </div>
     <script src="script.js"></script>
        <script>
@@ -688,8 +708,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         const navigationHeight =document.querySelector('.nav').offsetHeight;
         document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
        
-$(document).ready(function() {
-    $('#registrationForm').submit(function(event) {
+        $(document).ready(function() {
+        $('#registrationForm').submit(function(event) {
         event.preventDefault(); // Prevent the form from performing a full-page refresh
         
         // Serialize the form data
