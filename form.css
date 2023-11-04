@@ -192,14 +192,20 @@ form {
 }
 
 /* Add media query for screens wider than 550px */
-@media (min-width: 551px) {
+@media all and (min-width: 551px) {
   .form-group {
     display: inline-block;
     width: calc(50% - 10px); /* Adjust the width based on your preference */
     margin-right: 20px; /* Add some spacing between inputs */
     vertical-align: top; /* Align inputs to the top */
   }
+  .lb{
 
+    font: 24px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+
+  }
   /* Clear the right margin on every second input */
   .form-group:nth-child(2n) {
     margin-right: 0;
@@ -212,11 +218,18 @@ form {
 }
 
 /* Add media query for screens at most 550px wide */
-@media (max-width: 550px) {
+@media all and (max-width: 550px) {
   .form-group {
     display: block;
     width: 100%; /* Full width for small screens */
     margin-right: 0; /* Remove right margin */
+  }
+  .lb{
+
+    font: 24px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+
   }
 }
 .dialog {

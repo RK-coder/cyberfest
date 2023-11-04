@@ -103,6 +103,7 @@ function closePopup(eventId) {
     document.getElementById(eventId + "-popup").style.display = "none";
 }
 
+
 /*const element = document.querySelector('.fade-in');
 element.classList.add('animation');*/
 

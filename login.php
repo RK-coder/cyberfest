@@ -91,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="icon" type="image" href="tlogo.png">
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -157,9 +157,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="login-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div><br>
-            <p>Don't have an account? <a href="register.php">Sign up now</a></p>
+            <h6>Don't have an account? <a href="register.php">Sign up now</a></h6>
             <div class="login-group">
-                <p>Having trouble logging in? <a href="#" id="openContactDialog">Forgot login credentials</a></p>
+                <h6>Having trouble logging in? <a href="#" id="openContactDialog">Forgot login credentials</a></h6>
             </div>
             <div id="contactUsDialog" class="dialog">
                 <div class="dialog-content">

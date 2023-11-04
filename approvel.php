@@ -1,7 +1,3 @@
-<?php
-include "db_conn.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +35,7 @@ include "db_conn.php";
         </a>
     </div>
     <hr style="border: 2px solid aliceblue; margin-top: -0px;">
-    <div class="container-fluid">
+     <div class="container-fluid">
         <br><br>
         <table class="table table-bordered table-dark">
             <thead>
@@ -51,10 +47,12 @@ include "db_conn.php";
                     <th>Image</th>
                     <th>Transaction Number</th>
                     <th>Approve</th>
+                    <th>Download</th> <!-- Add a new table header for download -->
                 </tr>
             </thead>
             <?php
-            $query = "SELECT r.*, re.* FROM register r, registrations re WHERE r.id=re.id GROUP BY re.id";
+            include "db_conn.php"; // Include your database connection code here
+            $query = "SELECT r.*, re.* FROM register r LEFT JOIN registrations re ON r.id = re.id GROUP BY r.id";
             $data = mysqli_query($conn, $query);
             while ($rows = mysqli_fetch_array($data)) {
                 ?>
@@ -86,12 +84,18 @@ include "db_conn.php";
                         }
                         ?>
                     </td>
+                    <td>
+                        <?php
+                        if (!empty($rows['image_data'])) {
+                            echo '<a href="download.php?id=' . $rows['id'] . '">Download</a>';
+                        }
+                        ?>
+                    </td>
                 </tr>
                 </tbody>
             <?php } ?>
         </table>
     </div>
-
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");

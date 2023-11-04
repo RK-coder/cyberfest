@@ -79,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image" href="tlogo.png">
     <title>Reset Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,11 +109,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <li>   <a href="welcome.php">Home</a></li>
                     <li>   <a href="welcome.php#section2">About</a></li>
                     <li>   <a href="welcome.php#section3">Events</a></li>
-                    <li>   <a href="welcome.php#section4">Sponsors</a></li>
+                    <!-- <li>   <a href="welcome.php#section4">Sponsors</a></li> -->
                     <li>   <a href="welcome.php#section5">Contact</a></li>
-                    <li>   <a href="welcome.php#section6">Gallery</a></li>
                     <li>   <a href="reset-password.php" >Reset Password</a></li>
-                    <li>   <a href="profile.php" class="btn btn-warning">Profile</a></li>
+                    <li>   <a href="profile.php" class="btn btn-success">Profile</a></li>
                     <li>   <a href="logout.php" class="btn btn-danger ml-3">Sign Out</a></li>
                 </ul>
         </div>

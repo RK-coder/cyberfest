@@ -4,9 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="description" content="CYBERFEST IS A NATIONAL-LEVEL TECHNICAL SYMPOSIUM METICULOUSLY ORGANIZED BY THE DEPARTMENT OF COMPUTER APPLICATIONS AT COIMBATORE INSTITUTE OF TECHNOLOGY. ">
-    <link rel="icon" type="image" href="title.jpg">
+    <link rel="icon" type="image" href="tlogo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberFest</title>
+    <title>CYBERFEST'23</title>
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
@@ -47,7 +47,7 @@
                 <li>   <a href="#section2">About</a></li>
                 <li>   <a href="#section3">Events</a></li>
                 <!-- <li>   <a href="#section4">Sponsors</a></li> -->
-                <li>   <a href="#section4">Contact</a></li>
+                <li>   <a href="#section5">Contact</a></li>
                 <li>   <a href='login.php' class="btn btn-primary">Login</a></li>
                 <li>   <a href='register.php' class="btn btn-warning">Sign Up</a></li>
                 </ul>
@@ -60,8 +60,9 @@
             <h4>DEPARTMENT OF COMPUTER APPLICATIONS </h4><br>
             <h6> PROUDLY PRESENTs </h6>  <br>
             <img src="logo.png" alt="logo">
+            
             <h4><br>A JOURNEY THROUGH THE WORLD OF TECHNOLOGY</h4> <br>
-        
+            <h3 style="color:yellow;"> NOV'17 2023 </h3><br>
             <div class="timer">
                 <h2 id="headline">COUNTDOWN TO THE EVENT</h2>
                 <div id="countdown">
@@ -89,33 +90,37 @@
         <div class="instruction">
         <hr style="height:2px;border-width:0;color:white;background-color:white">   
         <h2> INSTRUCTIONS FOR REGISTRATION</h2><br>
-  
+
+        <h5> GENERAL INSTRUCTIONS </h5>
+        <ul>
+            <li> Only 25 Students per college are admitted.</li>
+            <li>All UnderGraduate and PostGraduate College students except Undergraduate 1st years are eligibile to participate.</li>
+            <li>  The registration fee for our symposium is priced at 200 rupees</li>
+            <li> Once the registration is made , participants can attend upto 5 different events.</li>
+        </ul> 
+
         <h5> REGISTRATION</h5>
         <ul>
-            <li> User must create an Account inorder to register for event</li>
-            <li>Once the registration amount is paid User can register for 5 different Events</li>
             <li> Clicking "Register" button under the event description will directly register you to the event.</li>
             <li> Once registered for the event you cannot unregister yourself from the event. </li>
         </ul>
+
         <h5> CATEGORIZATION </h5>
         <ul>
-            <li>In offline events there are 3 categories, In the first two categories there are two events. You can only register for one event from each categories.</li>
+            <li>In offline events there are 3 categories, In the first two categories there are two events. You can only register any one in the first two categories.</li>
             <li><b>For ex:</b> You can either register for Quantum Quest or Fun Forum in the category 1 and you can either register for logic lore or maze runners in category 2.</li>
-            <li> For the FUN FORUM event only 120 members are allowed and the registration for the  event is closed once the registrations are full. </li>
+            <li> For the FUN FORUM event only 120 members are allowed and the registration for the  event will be closed once the registrations are full. </li>
         </ul> 
-        <h5> ELIGIBILITY </h5>
-        <ul>
-            <li>All UnderGraduate and PostGraduate College students except Undergraduate 1st years are eligibile to participate.</li>
-        </ul>
+    
         <h5> PROFILE </h5>
         <ul>
             <li> You can check  your registered events in your profile. </li>
             <li> You can also check your registered mobile number and email id. </li>
         </ul>
             <p><b>For any queries related to registration participants can contact the below listed event organizers.</b></p>
-            <li> <b>Sankar Guru - 9626930715</li>
+           <ul> <li> <b>Sankar Guru - 9626930715</li>
             <li> Keerthana - 6374682651</li>
-            <li> Pepitha sri - 8680078973</b></li>
+            <li> Pepitha sri - 8680078973</b></li></ul>
         
         </div>
         <div class="perk">
@@ -132,7 +137,7 @@
      
                     <!-- Category 1: -->
                     <div class="subevent-category">
-                    <h3> &nbsp; &nbsp; &nbsp; CATEGORY 1</h3>
+                    <h3> CATEGORY 1</h3>
                     <div class="category">
                         <br>
                         <div class="subevent-details" data-event-id="1" onclick="openPopup('event1')">
@@ -140,7 +145,7 @@
                             <div class="logoimg">
                             <img src="QQ1.png" alt="logo" style="width:110%">
                             </div><br>
-                            <p>Quiz your way to coding glory!</p>
+                            <p>" Quiz your way to coding glory! "</p>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;    
                     
@@ -149,7 +154,7 @@
                             <div class="logoimg">
                             <img src="FF.png" alt="logo" style="width:110%">
                             </div><br>
-                            <p> Bytes of Fun, Bits of Tech: Join the College Fusion Fest!</p>
+                            <p>" Bytes of Fun, Bits of Tech: Join the College Fusion Fest! "</p>
                         </div>
                     </div>
                     </div>
@@ -163,7 +168,7 @@
                             <div class="logoimg">
                             <img src="LL1.png" alt="logo" style="width:110%">
                             </div><br>
-                            <p>The canvas of code awaits your artistry</p>
+                            <p>" The canvas of code awaits your artistry ! "</p>
                         </div>
                         &nbsp;&nbsp; &nbsp; &nbsp; 
 
@@ -172,7 +177,7 @@
                             <div class="logoimg">
                             <img src="MR1.png" alt="logo" style="width:110%">
                             </div>
-                            <p>Showcase your programming prowess by solving intricate coding puzzles and problems.</p>
+                            <p>" Clear your vision holds the key.... Where you stumble there lies your treasure! "</p>
                         </div>
                     </div>
                     </div>
@@ -186,7 +191,7 @@
                             <div class="logoimg">
                             <img src="IL.png" alt="logo" style="width:110%">
                             </div>
-                            <p>From Concept to Reality, From Vision to Impact:Launch Your Innovation at Idea Launch</p>
+                            <p>" From Concept to Reality, From Vision to Impact:Launch Your Innovation at Idea Launch "</p>
                         </div>
                     </div><br>
                     </div>
@@ -203,7 +208,7 @@
                                 <div class="logoimg">
                                     <img src="SM.png" alt="logo" style="width:110%">
                                 </div>
-                                <p>Engage with industry experts through enlightening talks and discussions on the latest tech trends.</p>
+                                <p>"Embark on a journey of limitless possibilities through the strategic dance of kings and queens."</p>
                             </div>
                         </div>
                     </div>
@@ -220,7 +225,7 @@
                                 <div class="logoimg">
                                 <img src="SS.png" alt="logo" style="width:110%">
                                 </div>
-                                <p>Showcase your photography skills.</p>
+                                <p>" Capture the world through your lens and tell a story in a single frame. "</p>
                             </div><br>
                         </div><br>
                    </div>
@@ -274,17 +279,21 @@
                 <p>
                     For any queries participants can contact the below listed committee members.
                 </p>
-                    <ul>
-                    <li>	Vishwak Shana	-	9150414644</li>
-                    <li>	Sindhu	-	9791918048</li>
-                    <li>	Swetha	-	8667784051</li>
-                    <li>	Naga Harish	-	 6380833476</li>
+                <ul>
+                    <li>	Vishwak Shana	-	91504 14644</li>
+                    <li>	Sindhu	-	97919 18048</li>
+                    <li>	Swetha	-	86677 84051</li>
+                    <li>	Naga Harish	-	 63808 33476</li>
                     </ul>
                
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">Login to register for QUANTUM QUEST</button>  
-                <iframe name="myiframe" style="display: none;"></iframe>
+                <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                        Login to register for QUANTUM QUEST
+                    </button>
+                </a>               
+                 <iframe name="myiframe" style="display: none;"></iframe>
             </div>
             </div>
         </div>
@@ -315,16 +324,19 @@
                 <p>
                     For any queries participants can contact the below listed committee members.
                 </p>
-                    <ul>
-                    <li>	ARUN KUMAR  S   - 733952244</li>
-                    <li>	SHEEHAL  NISHIBA J   - 9488886032</li>
-                    <li>	JAYARRAKESH PRABAKAR S - 9385528415</li>
-                    <li>	SOMASUNDARAM S--7010905731</li>
+                <ul>
+                    <li>	ARUN KUMAR  S   - 73395 22441</li>
+                    <li>	SHEEHAL  NISHIBA J   - 94888 86032</li>
+                    <li>	JAYARRAKESH PRABAKAR S - 93855 28415</li>
+                    <li>	SOMASUNDARAM S - 70109 05731</li>
                     </ul>
-               
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                    <button type="submit" name="register" value="FUN FORUM|Cat1" class="btn btn-primary">Login to register for FUN FORUM</button>
+                <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                        Login to register for FUN FORUM
+                    </button>
+                </a>   
                 </div>
 
             </div>
@@ -350,8 +362,24 @@
                     <li>The decision made by the panel cannot be overruled.</li>
                     </p>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
+                    <h4>EVENT COORDINATORS:</h4> 
+                        <p>
+                            For any queries participants can contact the below listed committee members.
+                        </p>
+                    <ul>
+                    <li>	ASHOK G   - 95666 27631</li>
+                    <li>	KAVIYA MEENA   - 89250 06212</li>
+                    <li>	ABHISHEK - 73582 68048</li>
+                    <li>	SHEEN X - 63842 04517</li>
+                    </ul>
+               
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="LOGIC LORE|Cat2" class="btn btn-primary">Login to register for LOGIC LORE</button>
+                <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                        Login to register for LOGIC LORE
+                    </button>
+                </a>
                 </div>
             </div>
         </div>
@@ -393,14 +421,18 @@
                 <h4>EVENT COORDINATORS</h4>
                <p> For any queries participants can contact the below listed committee members.</p>
                <ul> 
-               <li> Syed Abdul Rahman S - 7092550028</li>
-                <li> Oviya C - 8778653548</li>
-                <li> Viswa - 6374353499</li>
+               <li> Syed Abdul Rahman S - 70925 50028</li>
+                <li> Oviya C - 87786 53548</li>
+                <li> Viswa - 63743 53499</li>
                </ul>
                 </p>
                 <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="MAZE RUNNERS|Cat2" class="btn btn-primary">Login to register for MAZE RUNNERS</button>
+                <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                    Login to register for MAZE RUNNERS
+                    </button>
+                </a>
                 </div>
             </div>
         </div>
@@ -410,7 +442,7 @@
                 <span class="close-button" onclick="closePopup('event5')">&#10006;</span>
                 <h2>IDEA LAUNCH</h2><br>
                 <h4>DESCRIPTION   </h4>
-                   <p> The objective of this event is to conduct a paper presentation . Each team can choose the topic from the given set of problem statements . Prototype has to be submitted in prior , the shortlisted team will present their ideas in front of juries.</p>
+                   <p>Idea Lanuch is a paper presentation event. Share your domain expertise through professional PPTs, fostering collaboration and diverse discussions.</p>
                    <h4><b>EVENT DETAILS</b></h4> 
                    <h5> TEAM SIZE  : 3 or 4 members </h5>
                    <h4> EVENT RULES : </h4><ul>
@@ -443,14 +475,18 @@
                    <h4> EVENT COORDINATORS   </h4>
                     <p>For any queries participants can contact the below listed committee member :  </p>
                     <ul>
-                    <li>	Soundharya -  6381591413 </li>
-                    <li>	Vignesh - 9345902954</li>
-                    <li>	Ganga - 7639837241</li>
-                    <li>	Kaja Mohyaddeen - 6381214184</li>
+                    <li>	Soundharya -  63815 91413 </li>
+                    <li>	Vignesh - 93459 02954</li>
+                    <li>	Ganga - 76398 37241</li>
+                    <li>	Kaja Mohyaddeen - 63812 14184</li>
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                 <div style="text-align: center;">
-                <button type="submit" name="register" value="IDEA LAUNCH|Cat3" class="btn btn-primary">Login to register for IDEA LAUNCH</button>
+                <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                        Login to register for IDEA LAUNCH
+                    </button>
+                </a>
             </div>
             </div>
         </div>
@@ -462,7 +498,7 @@
                 <h4><b>DESCRIPTION</b></h4>
                 <p>Calling all budding photographers and creative spirits! We are excited to welcome you to our
                     photography contest.In this contest, you embark on a visual odyssey, where each frame is a
-                    new chapter, each 
+                    new chapter each. 
                 </p>
                 <h4><b>EVENT DETAILS</b></h4>    
                 <h5>NO OF ROUNDS: 2 </h5> 
@@ -505,15 +541,19 @@
                         For any queries participants can contact the below listed committee members.
                     </p>
                     <ul>
-                    <li> Srinathi -   6379236604</li>
-                    <li>  Pratheesh - 6382115320 </li>
-                    <li>  Ragavan - 7530054251</li>
-                   <br>
+                    <li> Srinathi -   63792 36604</li>
+                    <li>  Pratheesh - 63821 15320 </li>
+                    <li>  Ragavan - 75300 54251</li>
+                    <li> Ganasri R S - 94894 90208 </li>
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
-                <button type="submit" name="register" value="SHUTTER SPECTRUM|Cat4" class="btn btn-primary">Login to register for SHUTTER SPECTRUM</button>
-                    </div>
+                    <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                    Login to register for SHUTTER SPECTRUM
+                    </button>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -580,15 +620,18 @@
                         For any queries participants can contact the below listed committee members.
                     </p>
                     <ul>
-                    <li>Arunkumar M - 9500852903 </li>
-                    <li> Yogamithra - 7339596177 </li>
-                    <li> Navin Shantha Kumar U - 8870449328</li>
-                    <li> Vikasini S - 8870244556</li><br>
+                    <li>Arunkumar M - 95008 52903 </li>
+                    <li> Yogamithra - 73395 96177 </li>
+                    <li> Navin Shantha Kumar U - 88704 49328</li>
+                    <li> Vikasini S - 88702 44556</li><br>
                     </ul>
                     <hr style="height:2px;border-width:0;color:white;background-color:white">
                     <div style="text-align: center;">
-              
-                    <button type="submit" name="register" value="STICKEEZ MATE|Cat5" class="btn btn-primary">Login to register for STICKEEZ MATE</button>
+                    <a href="login.php">
+                    <button type="submit" name="register" value="QUANTUM QUEST|Cat1" class="btn btn-primary" style="text-align:center">
+                    Login to register for STICKEEZ MATE
+                    </button>
+                    </a>
                     </div>
                 </div>
         </div>
@@ -600,15 +643,110 @@
         </div>
         </section> -->
 
-        <section id="section5" class="scroll-section"><br><br>
-        <div class="contact">
-        <h2 style="text-align: center;">CONTACT</h2>
-            <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA=="target="_blank" class="fa fa-instagram"></a>
-            <a href="mailto:citcyberfest.ac.in@gmail.com"target="_blank"class="fa fa-envelope"></a>
-            <a href="tel:+91-8925317575"class="fa fa-phone"></a>
-            <a href="https://www.linkedin.com/in/cit-cyberfest23/"target="_blank"class="fa fa-linkedin "></a>
-            
+    <section id="section5" class="scroll-section"><br>
+        <h2 style="text-align: center;">&nbsp;&nbsp;CONTACT</h2><br>
+     
+        <div class="con">
+            <div class="con1">
+                <h4 style= "color:black">CHAIRMAN</h4>
+                <h5>SOORYA HARSHA P</h5>
+                <h5>89253 17575</h5>
+                <div class="contact-links">
+                    <a href="mailto:soorya2k2.pro@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918925317575"target="_blank" class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/soorya-harsha22/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="con1">
+                <h4 style= "color:black">SECRETARY</h4>
+                <h5>SANJEEV KANNA</h5>
+                <h5>86087 44936</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/b.s_kanna/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:kannab.s@yahoo.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918608744936" target="_blank"class="fa fa-whatsapp"></a>
+                    <!-- <a href="https://www.linkedin.com/in/cit-cyberfest23/" target="_blank" class="fa fa-linkedin"></a> -->
+                </div>
+            </div>
+
+            <div class="con1">
+                <h4 style= "color:black">TREASURER</h4>
+                <h5>PRAVEENA A</h5>
+                <h5>82207 79877</h5>
+                <div class="contact-links">
+                    <a href="mailto:praveenasundari02@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918220779877" target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/praveena-anthonyswamy-10640b25b/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+        </div><br>
+        <h4 style= "color:white;text-align:center;">EVENT ORGANISERS</h4>
+        <div class="con">
+
+            <div class="con1"><br>
+                <h5>KEERTHANA U</h5>
+                <h5>63746 82651</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/_keerthu_nathan_0_6_0_1/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:u.keerthu0601@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/916374682651" target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/keerthana-u-641908264/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="con1"><br>
+                <h5>SANKAR GURU S</h5>
+                <h5> 96269 30715</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/sankar.guru_sg/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:sankarguru02002@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/919626930715" target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/sankar-guru/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="con1"><br>
+                <h5>PEPITHA SRI S</h5>
+                <h5>86800 78973</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/pepithasri_sivaraj/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:pepithasri23@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918680078973" target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/cit-cyberfest23/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+        </div><br>
+        <h4 style= "color:white; text-align:center;">EVENT MANAGERS</h4>
+        <div class="con">
+            <div class="con1"><br>
+                <h5>HARISHANKAR K</h5>
+                <h5>76397 35123</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/harish_hs_/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:harishankar.amk@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/917639735123" target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/harishankark2/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="con1"><br>
+                <h5>FRANCIS STEPHEN J</h5>
+                <h5> 88704 49377</h5>
+                <div class="contact-links">
+                    <a href="https://www.instagram.com/spiker_stephen/" target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:stephenjfs3108@gmail.com" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918870449377" target="_blank" class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/francis-stephen-j-330170186/" target="_blank" class="fa fa-linkedin"></a>
+                </div>
+            </div>   
         </div>
+        <div class="contact">
+        <h2 style="text-align: center;">&nbsp;&nbsp;CONNECT WITH US IN SOCIAL MEDIAS</h2>
+                    <a href="https://instagram.com/cyberfest2k23?igshid=MzRlODBiNWFlZA=="target="_blank" class="fa fa-instagram"></a>
+                    <a href="mailto:citcyberfest.ac.in@gmail.com"target="_blank"class="fa fa-envelope"></a>
+                    <a href="https://wa.me/918925317575"target="_blank"class="fa fa-whatsapp"></a>
+                    <a href="https://www.linkedin.com/in/cit-cyberfest23/"target="_blank"class="fa fa-linkedin "></a>
+                </div>
     </section>
     </div>
    
@@ -616,6 +754,8 @@
     <script>
         const navigationHeight =document.querySelector('.nav').offsetHeight;
         document.documentElement.style.setProperty('--scroll-pading', navigationHeight -1 + "px" )
+
+        
     </script>
 
 </body>

@@ -277,7 +277,7 @@ if (empty($transaction_number)) {
                     mysqli_stmt_close($updateStmt);
 
                     // Redirect to login page
-                    echo '<script>alert("Registration successful. You can now log in.");';
+                    echo '<script>alert("Registration successful. You can now log in. Confirmation mail will be sent to your registered email once your details are verified.");';
                     echo 'window.location.href = "login.php";</script>';
                 } else {
                     echo "Oops! Something went wrong. Please try again later.";
@@ -324,8 +324,9 @@ if (empty($transaction_number)) {
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to login page
-                echo '<script>alert("Registration successful. You can now log in.");';
+                echo '<script>alert("Registration successful! You can now log in. Confirmation mail will be sent to your registered email once your details are verified.");';
                 echo 'window.location.href = "login.php";</script>';
+
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -346,6 +347,7 @@ if (empty($transaction_number)) {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image" href="tlogo.png">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -698,19 +700,117 @@ if (empty($transaction_number)) {
                 oninput="this.setCustomValidity('')" id="college" class="form-control <?php echo (!empty($college_err)) ? 'is-invalid' : ''; ?>">
                     
                 <option value="" selected disabled>Select your college</option>
-                    <option value="Bannari Amman Institute of Technology, Sathy" <?php if ($college === 'Bannari Amman Institute of Technology, Sathy') echo 'selected'; ?>>Bannari Amman Institute of Technology, Sathy</option>
-                    <option value="Coimbatore Institute Of Technology" <?php if ($college === 'Coimbatore Institute Of Technology') echo 'selected'; ?>>Coimbatore Institute Of Technology</option>
-                    <option value="Dr. NGP Institute Of Technology " <?php if ($college === 'Dr. NGP Institute Of Technology') echo 'selected'; ?>>Dr. NGP Institute Of Technology</option>
-                    <option value="Hindusthan College of Arts and science" <?php if ($college === 'Hindusthan College of Arts and science') echo 'selected'; ?>>Hindusthan College of Arts and science</option>
-                    <option value="Knowledge Institute of Technology, Salem" <?php if ($college === 'Knowledge Institute of Technology, Salem') echo 'selected'; ?>>Knowledge Institute of Technology, Salem</option>
-                    <option value="Kongu Engineering College, Erode" <?php if ($college === 'Kongu Engineering College, Erode') echo 'selected'; ?>>Kongu Engineering College, Erode</option>
-                    <option value="Kumaraguru College of Technology, Coimbatore" <?php if ($college === 'Kumaraguru College of Technology, Coimbatore') echo 'selected'; ?>>Kumaraguru College of Technology, Coimbatore</option>
-                    <option value="Nallamuthu Gounder Mahalingam College, Pollachi" <?php if ($college === 'Nallamuthu Gounder Mahalingam College, Pollachi') echo 'selected'; ?>>Nallamuthu Gounder Mahalingam College, Pollachi</option>
-                    <option value="PSG College of technology" <?php if ($college === 'PSG College of technology') echo 'selected'; ?>>PSG College of technology</option>
-                    <option value="PSG College of arts and science" <?php if ($college === 'PSG College of arts and science') echo 'selected'; ?>>PSG College of arts and science</option>
-                    <option value="SNS College of Technology, Coimbatore" <?php if ($college === 'SNS College of Technology, Coimbatore') echo 'selected'; ?>>SNS College of Technology, Coimbatore</option>
-                    <option value="Sri Krishna College Of Technology, Coimbatore" <?php if ($college === 'Sri Krishna College Of Technology, Coimbatore') echo 'selected'; ?>>Sri Krishna College Of Technology, Coimbatore</option>
-                    <option value="Other" <?php if ($college === 'Other') echo 'selected'; ?>>Other</option>
+                    <option value="A V S Engineering College, Salem" <?php if ($college === 'A V S Engineering College, Salem') echo 'selected'; ?>>A V S Engineering College, Salem</option>
+                    <option value="Adithya Institute of Technology, Coimbatore" <?php if ($college === 'Adithya Institute of Technology, Coimbatore') echo 'selected'; ?>>Adithya Institute of Technology, Coimbatore</option>
+                    <option value="Akshaya College of Engineering & Technology, Coimbatore" <?php if ($college === 'Akshaya College of Engineering & Technology, Coimbatore') echo 'selected'; ?>>Akshaya College of Engineering & Technology, Coimbatore</option>
+                    <option value="Al-Ameen Engineering College (Autonomous), Erode" <?php if ($college === 'Al-Ameen Engineering College (Autonomous), Erode') echo 'selected'; ?>>Al-Ameen Engineering College (Autonomous), Erode</option>
+                    <option value="ANNA UNIVERSITY REGIONAL CENTRE, COIMBATORE" <?php if ($college === 'ANNA UNIVERSITY REGIONAL CENTRE, COIMBATORE') echo 'selected'; ?>>ANNA UNIVERSITY REGIONAL CENTRE, COIMBATORE</option>
+                    <option value="Angel College of Engineering and Technology, Tiruppur" <?php if ($college === 'Angel College of Engineering and Technology, Tiruppur') echo 'selected'; ?>>Angel College of Engineering and Technology, Tiruppur</option>
+                    <option value="Annapoorana Engineering College (Autonomous), Salem" <?php if ($college === 'Annapoorana Engineering College (Autonomous), Salem') echo 'selected'; ?>>Annapoorana Engineering College (Autonomous), Salem</option>
+                    <option value="Arjun College of Technology, Coimbatore" <?php if ($college === 'Arjun College of Technology, Coimbatore') echo 'selected'; ?>>Arjun College of Technology, Coimbatore</option>
+                    <option value="Arulmurugan College of Engineering, Karur" <?php if ($college === 'Arulmurugan College of Engineering, Karur') echo 'selected'; ?>>Arulmurugan College of Engineering, Karur</option>
+                    <option value="AVINASHILINGAM UNIVERSITY" <?php if ($college === 'AVINASHILINGAM UNIVERSITY') echo 'selected'; ?>>AVINASHILINGAM UNIVERSITY</option>
+                    <option value="Asian College of Engineering and Technology, Coimbatore" <?php if ($college === 'Asian College of Engineering and Technology, Coimbatore') echo 'selected'; ?>>Asian College of Engineering and Technology, Coimbatore</option>
+                    <option value="Bannari Amman Institute of Technology (Autonomous), Erode" <?php if ($college === 'Bannari Amman Institute of Technology (Autonomous), Erode') echo 'selected'; ?>>Bannari Amman Institute of Technology (Autonomous), Erode</option>                   
+                    <option value="Bharathiyar Institute of Engineering for Women, Salem" <?php if ($college === 'Bharathiyar Institute of Engineering for Women, Salem') echo 'selected'; ?>>Bharathiyar Institute of Engineering for Women, Salem</option>
+                    <option value="BHARATHIAR UNIVERSITY" <?php if ($college === 'BHARATHIAR UNIVERSITY') echo 'selected'; ?>>BHARATHIAR UNIVERSITY</option>
+                    <option value="Builders Engineering College, Tiruppur" <?php if ($college === 'Builders Engineering College, Tiruppur') echo 'selected'; ?>>Builders Engineering College, Tiruppur</option>
+                    <option value="Cherraan College of Technology, Tiruppur" <?php if ($college === 'Cherraan College of Technology, Tiruppur') echo 'selected'; ?>>Cherraan College of Technology, Tiruppur</option>
+                    <option value="Christ The King Engineering College, Coimbatore" <?php if ($college === 'Christ The King Engineering College, Coimbatore') echo 'selected'; ?>>Christ The King Engineering College, Coimbatore</option>
+                    <option value="C M S College of Engineering and Technology, Coimbatore" <?php if ($college === 'C M S College of Engineering and Technology, Coimbatore') echo 'selected'; ?>>C M S College of Engineering and Technology, Coimbatore</option>
+                    <option value="Coimbatore Institute of Engineering and Technology (Autonomous), Coimbatore" <?php if ($college === 'Coimbatore Institute of Engineering and Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Coimbatore Institute of Engineering and Technology (Autonomous), Coimbatore</option>
+                    <option value="Coimbatore Institute of Technology (Autonomous), Coimbatore" <?php if ($college === 'Coimbatore Institute of Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Coimbatore Institute of Technology (Autonomous), Coimbatore</option>
+                    <option value="Dhanalakshmi Srinivasan College of Engineering, Coimbatore" <?php if ($college === 'Dhanalakshmi Srinivasan College of Engineering, Coimbatore') echo 'selected'; ?>>Dhanalakshmi Srinivasan College of Engineering, Coimbatore</option>
+                    <option value="Dhaanish Ahmed Institute of Technology, Coimbatore" <?php if ($college === 'Dhaanish Ahmed Institute of Technology, Coimbatore') echo 'selected'; ?>>Dhaanish Ahmed Institute of Technology, Coimbatore</option>
+                    <option value="Dhirajlal Gandhi College of Technology, Salem" <?php if ($college === 'Dhirajlal Gandhi College of Technology, Salem') echo 'selected'; ?>>Dhirajlal Gandhi College of Technology, Salem</option>
+                    <option value="DR GR DAMODARAN COLLEGE OF SCIENCE" <?php if ($college === 'DR GR DAMODARAN COLLEGE OF SCIENCE') echo 'selected'; ?>>DR GR DAMODARAN COLLEGE OF SCIENCE</option>
+                    <option value="DR MAHALINGAM COLLEGE OF ENGINEERING AND TECHNOLOGY" <?php if ($college === 'DR MAHALINGAM COLLEGE OF ENGINEERING AND TECHNOLOGY') echo 'selected'; ?>>DR MAHALINGAM COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+                    <option value="Dr.NGP Arts and science" <?php if ($college === 'Dr.NGP Arts and science') echo 'selected'; ?>>DR.NGP ARTS AND SCIENCE</option>
+                    <option value="Dr. NGP Institute Of Technology, Coimbatore" <?php if ($college === 'Dr. NGP Institute Of Technology, Coimbatore') echo 'selected'; ?>>DR. NGP INSTITUTE OF TECHNOLOGY, COIMBATORE</option>
+                    <option value="Dr.SNS Rajalakshmi College of Arts and Science" <?php if ($college === 'Dr.SNS Rajalakshmi College of Arts and Science') echo 'selected'; ?>>DR.SNS RAJALAKSHMI COLLEGE OF ARTS AND SCIENCE</option>
+                    <option value="Easa College of Engineering and Technology, Coimbatore" <?php if ($college === 'Easa College of Engineering and Technology, Coimbatore') echo 'selected'; ?>>Easa College of Engineering and Technology, Coimbatore</option>
+                    <option value="Excel Engineering College (Autonomous), Namakkal" <?php if ($college === 'Excel Engineering College (Autonomous), Namakkal') echo 'selected'; ?>>Excel Engineering College (Autonomous), Namakkal</option>
+                    <option value="GOVERNMENT ARTS COLLEGE" <?php if ($college === 'GOVERNMENT ARTS COLLEGE') echo 'selected'; ?>>GOVERNMENT ARTS COLLEGE</option>
+                    <option value="Government College of Technology" <?php if ($college === 'Government College of Technology') echo 'selected'; ?>>GOVERNMENT COLLEGE OF TECHNOLOGY</option>
+                    <option value="Ganesh College of Engineering, Salem" <?php if ($college === 'Ganesh College of Engineering, Salem') echo 'selected'; ?>>Ganesh College of Engineering, Salem</option>
+                    <option value="Gnanamani College of Technology, Namakkal" <?php if ($college === 'Gnanamani College of Technology, Namakkal') echo 'selected'; ?>>Gnanamani College of Technology, Namakkal</option>
+                    <option value="Government College of Engineering, Erode (formerly Institute of Road and Transport Technology)" <?php if ($college === 'Government College of Engineering, Erode (formerly Institute of Road and Transport Technology)') echo 'selected'; ?>>Government College of Engineering, Erode (formerly Institute of Road and Transport Technology)</option>
+                    <option value="Government College of Engineering, Salem (Autonomous)" <?php if ($college === 'Government College of Engineering, Salem (Autonomous)') echo 'selected'; ?>>Government College of Engineering, Salem (Autonomous)</option>
+                    <option value="Hindusthan College Of Arts And Science, Coimbatore" <?php if ($college === 'Hindusthan College Of Arts And Science, Coimbatore') echo 'selected'; ?>>HINDUSTHAN COLLEGE OF ARTS AND SCIENCE, COIMBATORE</option>
+                    <option value="J K K Munirajah College of Technology, Erode" <?php if ($college === 'J K K Munirajah College of Technology, Erode') echo 'selected'; ?>>J K K Munirajah College of Technology, Erode</option>
+                    <option value="Jai Shriram Engineering College, Tiruppur" <?php if ($college === 'Jai Shriram Engineering College, Tiruppur') echo 'selected'; ?>>Jai Shriram Engineering College, Tiruppur</option>
+                    <option value="Jairupaa College of Engineering, Tiruppur" <?php if ($college === 'Jairupaa College of Engineering, Tiruppur') echo 'selected'; ?>>Jairupaa College of Engineering, Tiruppur</option>
+                    <option value="Jansons Institute of Technology, Coimbatore" <?php if ($college === 'Jansons Institute of Technology, Coimbatore') echo 'selected'; ?>>Jansons Institute of Technology, Coimbatore</option>
+                    <option value="K P R Institute of Engineering and Technology (Autonomous), Coimbatore" <?php if ($college === 'K P R Institute of Engineering and Technology (Autonomous), Coimbatore') echo 'selected'; ?>>K P R Institute of Engineering and Technology (Autonomous), Coimbatore</option>
+                    <option value="Kathir College of Engineering, Coimbatore" <?php if ($college === 'Kathir College of Engineering, Coimbatore') echo 'selected'; ?>>Kathir College of Engineering, Coimbatore</option>
+                    <option value="KARPAGAM ACADEMY OF HIGHER EDUCATION" <?php if ($college === 'KARPAGAM ACADEMY OF HIGHER EDUCATION') echo 'selected'; ?>>KARPAGAM ACADEMY OF HIGHER EDUCATION</option>
+                    <option value="KGISL INSTITUTE OF INFORMATION MANAGEMENT" <?php if ($college === 'KGISL INSTITUTE OF INFORMATION MANAGEMENT') echo 'selected'; ?>>KGISL INSTITUTE OF INFORMATION MANAGEMENT</option>
+                    <option value="Kalaignar karunanidhi Institute of Technology" <?php if ($college === 'Kalaignar karunanidhi Institute of Technology') echo 'selected'; ?>>KALAIGNAR KARUNANIDHI INSTITUTE OF TECHNOLOGY</option>
+                    <option value="Karpagam College of Engineering (Autonomous) ,Coimbatore" <?php if ($college === 'Karpagam College of Engineering (Autonomous) ,Coimbatore') echo 'selected'; ?>>KARPAGAM COLLEGE OF ENGINEERING (AUTONOMOUS) ,COIMBATORE</option>
+                    <option value="Karpagam Institute of Technology,Coimbatore" <?php if ($college === 'Karpagam Institute of Technology,Coimbatore') echo 'selected'; ?>>KARPAGAM INSTITUTE OF TECHNOLOGY,COIMBATORE</option>
+                    <option value="Knowledge Institute of Technology, Salem" <?php if ($college === 'Knowledge Institute of Technology, Salem') echo 'selected'; ?>>KNOWLEDGE INSTITUTE OF TECHNOLOGY, SALEM</option>
+                    <option value="Kongu Engineering College, Erode" <?php if ($college === 'Kongu Engineering College, Erode') echo 'selected'; ?>>KONGU ENGINEERING COLLEGE, ERODE</option>
+                    <option value="Kumaraguru College of Technology" <?php if ($college === 'Kumaraguru College of Technology') echo 'selected'; ?>>KUMARAGURU COLLEGE OF TECHNOLOGY</option>
+                    <option value="Kongu Engineering College (Autonomous), Erode" <?php if ($college === 'Kongu Engineering College (Autonomous), Erode') echo 'selected'; ?>>Kongu Engineering College (Autonomous), Erode</option>
+                    <option value="M. Kumarasamy College of Engineering (Autonomous), Karur" <?php if ($college === 'M. Kumarasamy College of Engineering (Autonomous), Karur') echo 'selected'; ?>>M. Kumarasamy College of Engineering (Autonomous), Karur</option>
+                    <option value="Mahendra College of Engineering, Salem" <?php if ($college === 'Mahendra College of Engineering, Salem') echo 'selected'; ?>>Mahendra College of Engineering, Salem</option>
+                    <option value="Mahendra Engineering College for Women, Namakkal" <?php if ($college === 'Mahendra Engineering College for Women, Namakkal') echo 'selected'; ?>>Mahendra Engineering College for Women, Namakkal</option>
+                    <option value="Muthayammal College of Engineering, Namakkal" <?php if ($college === 'Muthayammal College of Engineering, Namakkal') echo 'selected'; ?>>Muthayammal College of Engineering, Namakkal</option>
+                    <option value="N.S.N College of Engineering and Technology, Karur" <?php if ($college === 'N.S.N College of Engineering and Technology, Karur') echo 'selected'; ?>>N.S.N College of Engineering and Technology, Karur</option>
+                    <option value="Nandha College of Technology, Erode" <?php if ($college === 'Nandha College of Technology, Erode') echo 'selected'; ?>>Nandha College of Technology, Erode</option>
+                    <option value="Nandha Engineering College (Autonomous), Erode" <?php if ($college === 'Nandha Engineering College (Autonomous), Erode') echo 'selected'; ?>>Nandha Engineering College (Autonomous), Erode</option>
+                    <option value="Nallamuthu Gounder Mahalingam College, Pollachi" <?php if ($college === 'Nallamuthu Gounder Mahalingam College, Pollachi') echo 'selected'; ?>>NALLAMUTHU GOUNDER MAHALINGAM COLLEGE, POLLACHI</option>
+                    <option value="NEHRU COLLEGE OF MANAGEMENT" <?php if ($college === 'NEHRU COLLEGE OF MANAGEMENT') echo 'selected'; ?>>NEHRU COLLEGE OF MANAGEMENT</option>
+                    <option value="P A College of Engineering and Technology (Autonomous), Coimbatore" <?php if ($college === 'P A College of Engineering and Technology (Autonomous), Coimbatore') echo 'selected'; ?>>P A College of Engineering and Technology (Autonomous), Coimbatore</option>
+                    <option value="P.G.P. College of Engineering and Technology, Namakkal" <?php if ($college === 'P.G.P. College of Engineering and Technology, Namakkal') echo 'selected'; ?>>P.G.P. College of Engineering and Technology, Namakkal</option>
+                    <option value="Paavai College of Engineering, Namakkal" <?php if ($college === 'Paavai College of Engineering, Namakkal') echo 'selected'; ?>>Paavai College of Engineering, Namakkal</option>
+                    <option value="Paavai Engineering College (Autonomous), Namakkal" <?php if ($college === 'Paavai Engineering College (Autonomous), Namakkal') echo 'selected'; ?>>Paavai Engineering College (Autonomous), Namakkal</option>
+                    <option value="Pollachi Institute of Engineering and Technology, Coimbatore" <?php if ($college === 'Pollachi Institute of Engineering and Technology, Coimbatore') echo 'selected'; ?>>Pollachi Institute of Engineering and Technology, Coimbatore</option>
+                    <option value="PIONEER COLLEGE OF ARTS AND SCIENCE" <?php if ($college === 'PIONEER COLLEGE OF ARTS AND SCIENCE') echo 'selected'; ?>>PIONEER COLLEGE OF ARTS AND SCIENCE</option>
+                    <option value="PSG COLLEGE OF ARTS AND SCIENCE" <?php if ($college === 'PSG COLLEGE OF ARTS AND SCIENCE') echo 'selected'; ?>>PSG COLLEGE OF ARTS AND SCIENCE</option>
+                    <option value="PSG COLLEGE OF TECHNOLOGY" <?php if ($college === 'PSG COLLEGE OF TECHNOLOGY') echo 'selected'; ?>>PSG COLLEGE OF TECHNOLOGY</option>
+                    <option value="PSGR KRISHNAMMAL COLLEGE FOR WOMEN" <?php if ($college === 'PSGR KRISHNAMMAL COLLEGE FOR WOMEN') echo 'selected'; ?>>PSGR KRISHNAMMAL COLLEGE FOR WOMEN</option>
+                    <option value="Park College of Engineering and Technology" <?php if ($college === 'Park College of Engineering and Technology') echo 'selected'; ?>>PARK COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+                    <option value="R P Sarathy Institute of Technology (formerly Narasu's Sarathy Institute of Technology), Salem" <?php if ($college === "R P Sarathy Institute of Technology (formerly Narasu's Sarathy Institute of Technology), Salem") echo 'selected'; ?>>R P Sarathy Institute of Technology (formerly Narasu's Sarathy Institute of Technology), Salem</option>
+                    <option value="RATHINAM TECHNICAL CAMPUS" <?php if ($college === 'RATHINAM TECHNICAL CAMPUS') echo 'selected'; ?>>RATHINAM TECHNICAL CAMPUS</option>
+                    <option value="RVS COLLEGE OF ENGINEERING AND TECHNOLOGY" <?php if ($college === 'RVS COLLEGE OF ENGINEERING AND TECHNOLOGY') echo 'selected'; ?>>RVS COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+                    <option value="Sasurie College of Engineering, Tiruppur" <?php if ($college === 'Sasurie College of Engineering, Tiruppur') echo 'selected'; ?>>Sasurie College of Engineering, Tiruppur</option>
+                    <option value="Sengunthar Engineering College (Autonomous), Namakkal" <?php if ($college === 'Sengunthar Engineering College (Autonomous), Namakkal') echo 'selected'; ?>>Sengunthar Engineering College (Autonomous), Namakkal</option>
+                    <option value="Shree Sathyam College of Engineering and Technology, Salem" <?php if ($college === 'Shree Sathyam College of Engineering and Technology, Salem') echo 'selected'; ?>>Shree Sathyam College of Engineering and Technology, Salem</option>
+                    <option value="Shree Venkateshwara Hi-tech Engineering College, Erode" <?php if ($college === 'Shree Venkateshwara Hi-tech Engineering College, Erode') echo 'selected'; ?>>Shree Venkateshwara Hi-tech Engineering College, Erode</option>
+                    <option value="Sona College of Technology (Autonomous), Salem" <?php if ($college === 'Sona College of Technology (Autonomous), Salem') echo 'selected'; ?>>Sona College of Technology (Autonomous), Salem</option>
+                    <option value="Sree Sakthi Engineering College, Coimbatore" <?php if ($college === 'Sree Sakthi Engineering College, Coimbatore') echo 'selected'; ?>>Sree Sakthi Engineering College, Coimbatore</option>
+                    <option value="Sri Eshwar College of Engineering (Autonomous), Coimbatore" <?php if ($college === 'Sri Eshwar College of Engineering (Autonomous), Coimbatore') echo 'selected'; ?>>Sri Eshwar College of Engineering (Autonomous), Coimbatore</option>
+                    <option value="Sri Krishna College of Engineering & Technology (Autonomous), Coimbatore" <?php if ($college === 'Sri Krishna College of Engineering & Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Sri Krishna College of Engineering & Technology (Autonomous), Coimbatore</option>
+                    <option value="Sri Krishna College of Technology (Autonomous), Coimbatore" <?php if ($college === 'Sri Krishna College of Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Sri Krishna College of Technology (Autonomous), Coimbatore</option>
+                    <option value="SRI RAMAKRISHANA ENGINEERING COLLEGE" <?php if ($college === 'SRI RAMAKRISHANA ENGINEERING COLLEGE') echo 'selected'; ?>>SRI RAMAKRISHANA ENGINEERING COLLEGE</option>
+                    <option value="Sri Ramakrishna Institute of Technology (Autonomous), Coimbatore" <?php if ($college === 'Sri Ramakrishna Institute of Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Sri Ramakrishna Institute of Technology (Autonomous), Coimbatore</option>
+                    <option value="Sri Ranganthar Institute of Engineering and Technology, Coimbatore" <?php if ($college === 'Sri Ranganthar Institute of Engineering and Technology, Coimbatore') echo 'selected'; ?>>Sri Ranganthar Institute of Engineering and Technology, Coimbatore</option>
+                    <option value="Sri Sai Ranganathan Engineering College, Coimbatore" <?php if ($college === 'Sri Sai Ranganathan Engineering College, Coimbatore') echo 'selected'; ?>>Sri Sai Ranganathan Engineering College, Coimbatore</option>
+                    <option value="Sri Shakthi Institute of Engineering and Technology (Autonomous), Coimbatore" <?php if ($college === 'Sri Shakthi Institute of Engineering and Technology (Autonomous), Coimbatore') echo 'selected'; ?>>Sri Shakthi Institute of Engineering and Technology (Autonomous), Coimbatore</option>
+                    <option value="Sri Shanmugha College of Engineering and Technology, Salem" <?php if ($college === 'Sri Shanmugha College of Engineering and Technology, Salem') echo 'selected'; ?>>Sri Shanmugha College of Engineering and Technology, Salem</option>
+                    <option value="Sri Venkateswara College of Computer Applications & Management, Coimbatore" <?php if ($college === 'Sri Venkateswara College of Computer Applications & Management, Coimbatore') echo 'selected'; ?>>Sri Venkateswara College of Computer Applications & Management, Coimbatore</option>
+                    <option value="Sri Venkateswara Institute of Information Technology and Management, Coimbatore" <?php if ($college === 'Sri Venkateswara Institute of Information Technology and Management, Coimbatore') echo 'selected'; ?>>Sri Venkateswara Institute of Information Technology and Management, Coimbatore</option>
+                    <option value="Suguna College of Engineering, Coimbatore" <?php if ($college === 'Suguna College of Engineering, Coimbatore') echo 'selected'; ?>>Suguna College of Engineering, Coimbatore</option>
+                    <option value="Surya Engineering College, Erode" <?php if ($college === 'Surya Engineering College, Erode') echo 'selected'; ?>>Surya Engineering College, Erode</option>
+                    <option value="SNS COLLEGE OF ENGINEERING" <?php if ($college === 'SNS COLLEGE OF ENGINEERING') echo 'selected'; ?>>SNS COLLEGE OF ENGINEERING</option>
+                    <option value="SNS COLLEGE OF TECHNOLOGY" <?php if ($college === 'SNS COLLEGE OF TECHNOLOGY') echo 'selected'; ?>>SNS COLLEGE OF TECHNOLOGY</option>
+                    <option value="Sankara College of Science and Commerce" <?php if ($college === 'Sankara College of Science and Commerce') echo 'selected'; ?>>SANKARA COLLEGE OF SCIENCE AND COMMERCE</option>
+                    <option value="TAMILNADU COLLEGE OF ENGINEERING" <?php if ($college === 'TAMILNADU COLLEGE OF ENGINEERING') echo 'selected'; ?>>TAMILNADU COLLEGE OF ENGINEERING</option>    
+                    <option value="Tagore Institute of Engineering and Technology, Salem" <?php if ($college === 'Tagore Institute of Engineering and Technology, Salem') echo 'selected'; ?>>Tagore Institute of Engineering and Technology, Salem</option>
+                    <option value="The Kavery Engineering College, Salem" <?php if ($college === 'The Kavery Engineering College, Salem') echo 'selected'; ?>>The Kavery Engineering College, Salem</option>
+                    <option value="United Institute of Technology, Coimbatore" <?php if ($college === 'United Institute of Technology, Coimbatore') echo 'selected'; ?>>United Institute of Technology, Coimbatore</option>
+                    <option value="V S A Group of Institutions, Salem" <?php if ($college === 'V S A Group of Institutions, Salem') echo 'selected'; ?>>V S A Group of Institutions, Salem</option>
+                    <option value="Vasavi Vidya Trust Group of Institutions, Salem" <?php if ($college === 'Vasavi Vidya Trust Group of Institutions, Salem') echo 'selected'; ?>>Vasavi Vidya Trust Group of Institutions, Salem</option>
+                    <option value="Velalar College of Engineering and Technology (Autonomous), Erode" <?php if ($college === 'Velalar College of Engineering and Technology (Autonomous), Erode') echo 'selected'; ?>>Velalar College of Engineering and Technology (Autonomous), Erode</option>
+                    <option value="Vidyaa Vikas College of Engineering and Technology, Namakkal" <?php if ($college === 'Vidyaa Vikas College of Engineering and Technology, Namakkal') echo 'selected'; ?>>Vidyaa Vikas College of Engineering and Technology, Namakkal</option>
+                    <option value="Vivekanandha College of Engineering for Women (Autonomous), Namakkal" <?php if ($college === 'Vivekanandha College of Engineering for Women (Autonomous), Namakkal') echo 'selected'; ?>>Vivekanandha College of Engineering for Women (Autonomous), Namakkal</option>
+                    <option value="Vivekanandha College of Technology for Women, Namakkal" <?php if ($college === 'Vivekanandha College of Technology for Women, Namakkal') echo 'selected'; ?>>Vivekanandha College of Technology for Women, Namakkal</option>
+                    <option value="V.L.B. Janakiammal College of Arts and Science" <?php if ($college === 'V.L.B. Janakiammal College of Arts and Science') echo 'selected'; ?>>V.L.B. JANAKIAMMAL COLLEGE OF ARTS AND SCIENCE</option>
+                    <option value="V.S.B. College of Engineering Technical Campus, Coimbatore" <?php if ($college === 'V.S.B. College of Engineering Technical Campus, Coimbatore') echo 'selected'; ?>>V.S.B. College of Engineering Technical Campus, Coimbatore</option>
+                    <option value="V.S.B. Engineering College (Autonomous), Karur" <?php if ($college === 'V.S.B. Engineering College (Autonomous), Karur') echo 'selected'; ?>>V.S.B. Engineering College (Autonomous), Karur</option>
+                    <option value="Vishnu Lakshmi College of Engineering and Technology, Coimbatore" <?php if ($college === 'Vishnu Lakshmi College of Engineering and Technology, Coimbatore') echo 'selected'; ?>>Vishnu Lakshmi College of Engineering and Technology, Coimbatore</option>
+                    <option value="Other" <?php if ($college === 'Other') echo 'selected'; ?>>OTHER</option>
                 </select>
                 <span class="invalid-feedback"><?php echo $college_err; ?></span>
             </div>
@@ -776,7 +876,8 @@ if (empty($transaction_number)) {
         <hr style="height:2px;border-width:0;color:white;background-color:white">
         <ul>
         <p><b>For any queries related to registration participants can contact.</b></p>
-            <li><b> Rishi kumar N - 7598596904</b> </li>
+            <li><b> RISHI KUMAR N - 75985 96904</b> </li>
+            <li><b> VIGNESHWARAN S - 93459 02954</b> </li>
         </ul>
         <hr style="height:2px;border-width:0;color:white;background-color:white">
     </div>
